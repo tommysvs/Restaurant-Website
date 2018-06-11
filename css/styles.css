@@ -1,6 +1,7 @@
 body, html {
+    height: 100%;
     margin: 0;
-    background: black;
+    background: white;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -31,6 +32,7 @@ header::after {
 
 nav {
    /* ... */
+    
 }
 
 nav ul {
@@ -91,12 +93,12 @@ nav.shrink > ul {
 
 /*** FOOTER ***/
 footer {
+    bottom: 0;
     height: 540px;
     background: rgba(11, 14, 19, 1);
 }
 
 .line {
-    
     height: 1px;
     background: rgba(30, 37, 42, 1);
     width: 100%;
