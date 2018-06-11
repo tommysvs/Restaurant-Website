@@ -8,11 +8,10 @@
 
 .copyright {
     color: rgba(127, 132, 138, 1);
-    text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 13px;
     float: left;
-    padding-top: 8px;
+    padding-top: 10px;
 }
 
 /*** CONTACT ***/
