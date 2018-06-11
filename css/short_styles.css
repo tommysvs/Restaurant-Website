@@ -1,0 +1,139 @@
+/*** INDEX ***/
+.sec1-index {
+    height: 80%;
+    padding-top: 15%;
+    background-image: url(../images/bg3.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sec2-index {
+    background-image: url(../images/bg5.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec3-index {
+    background-image: url(../images/bg8.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*** CONTACT ***/
+.sec1-contact {
+    height: 450px;
+    padding-top: 15%;
+    background-image: url(../images/bg9.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec2-contact {
+    height: 650px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.sec2-centered {
+    width: 1150px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.sec3-contact {
+    height: 550px;
+    background-image: url(../images/bg10.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-contact {
+    height: 650px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+fieldset {
+    display: block;
+    border: 0;
+    width: 1150px;
+    padding: 0px;
+    margin: 0;
+}
+
+form {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+    width: 1150px;
+}
+
+input[type=text] {
+    width: 49%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline-color: #aaa;
+}
+
+
+
+.yname {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.yemail {
+    margin-bottom: 20px;
+}
+
+textarea {
+    outline-color: #aaa;
+    border: 1px solid #ccc;
+    resize: none;
+    padding: 10px 10px 10px 10px;
+    overflow: hidden;
+    width: 98%;
+    margin: 0;
+    float: left;
+}
+
+.button {
+    width: 180px;
+    height: 50px;
+    background-color: #161d27;
+    margin: 0 auto;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 40px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: darkgoldenrod;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
