@@ -1,0 +1,38 @@
+/*** INDEX ***/
+.ttl {
+    display: block;
+    color: gold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*** CONTACT ***/
+.cts {
+    display: block;
+    color: gold;
+    text-align: center;
+}
+
+.big {
+    display: block;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.7em;
+}
+
+.hqfu {
+    display: block;
+    color: darkgoldenrod;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.cut {
+    display: block;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.7em;
+}
