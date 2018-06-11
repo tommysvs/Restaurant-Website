@@ -1,7 +1,7 @@
 body, html {
-    height: 100%;
     margin: 0;
     background: black;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /*@font-face {
@@ -26,6 +26,7 @@ header::after {
     display: block;
     position: fixed;
     transition: all ease .5s;
+    z-index: 1;
 }
 
 nav {
@@ -90,30 +91,20 @@ nav.shrink > ul {
 
 /*** FOOTER ***/
 footer {
-    height: 65%;
+    height: 540px;
     background: rgba(11, 14, 19, 1);
 }
 
-#line {
+.line {
     
     height: 1px;
     background: rgba(30, 37, 42, 1);
     width: 100%;
 }
 
-.copyright {
-    color: rgba(127, 132, 138, 1);
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    padding: 1%;
-    font-size: 14px;
-}
-
-.maps {
-    width: 800px;
-    height: 400px;
+.footer-container {
     margin: 0 auto;
-    margin-top: 50px;
+    width: 80%;
 }
 
 /*** BUTTON-TO-TOP ***/
