@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     background: white;
     font-family: 'Quicksand', sans-serif;
+    color: white;
 }
 
 /*header {
@@ -50,7 +51,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 nav a:hover {
@@ -58,16 +59,17 @@ nav a:hover {
 }
 
 nav.shrink {
-    background-color: rgba(11, 14, 19, 0.95);
+    background-color: rgba(11, 14, 19, 0.9);
     height: 60px;
     padding-top: 0px;
     transition: all ease .5s;
 }
 
 nav.shrink > ul {
-    padding: 20px 0;
+    padding-top: 22px;
     transition: all ease .5s;
     padding-right: 20%;
+    font-size: 0.9em;
 }
 
 /*** ANIMATIONS ***/
@@ -100,9 +102,27 @@ footer {
     width: 100%;
 }
 
-.footer-container {
+.info-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.info-logo {
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    margin-top: 80px;
+}
+
+.copy-container {
     margin: 0 auto;
     width: 80%;
+    text-align: center;
+    margin-top: 15px;
 }
 
 /*** BUTTON-TO-TOP ***/
@@ -146,7 +166,7 @@ footer {
 }
 
 #return-to-top:hover i {
-    color: gold;
+    color: khaki;
     top: 10px;
 }
 
@@ -155,14 +175,14 @@ body::scrollbar {
     width: 7px;
 }
 body::scrollbar-thumb {
-    background-color: gold;
+    background-color: khaki;
     border-radius: 5px;
 }
 body::-moz-scrollbar {
     width: 7px;
 }
 body::-moz-scrollbar-thumb {
-    background-color: gold;
+    background-color: khaki;
     -moz-border-radius: 5px;
 } 
 body::-webkit-scrollbar {
@@ -175,14 +195,14 @@ body::-webkit-scrollbar-thumb {
 
 /*** SELECTION ***/
 ::selection {
-      background: gold;
+      background: khaki;
       color: black;
 }
 -moz-::selection {
-      background: gold;
+      background: khaki;
       color: black;
 }
 -webkit-::selection {
-      background: gold;
+      background: khaki;
       color: black;
 }
