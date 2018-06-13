@@ -1,8 +1,8 @@
 /*** INDEX ***/
 .sec1-home {
-    height: 600px;
+    height: 100%;
     padding-top: 15%;
-    background-image: url(../images/bg1.jpg);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url(../images/bg13.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,9 +29,9 @@
 
 /*** ABOUT ***/
 .sec1-about {
-    height: 450px;
+    height: 50%;
     padding-top: 15%;
-    background-image: url(../images/bg11.jpg);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(../images/bg11.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,28 +50,28 @@
     
 }
 
-/*** GALLERY ***/
-.sec1-gallery {
-    height: 600px;
+/*** MENU ***/
+.sec1-menu {
+    height: 70%;
     padding-top: 15%;
-    background-image: url(../images/bg14.jpg);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(../images/bg17.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.sec2-gallery {
-    height: 2250px;    
+.sec2-menu {
+    height: 200px;    
     background-color: white;
     padding-top: 50px;
 }
 
 /*** CONTACT ***/
 .sec1-contact {
-    height: 450px;
+    height: 60%;
     padding-top: 15%;
-    background-image: url(../images/bg9.jpg);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(../images/bg9.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,7 +87,7 @@
 .sec2-centered {
     width: 1150px;
     margin: 0 auto;
-    padding-top: 80px;
+    margin-top: 80px;
 }
 
 .sec3-contact {
@@ -116,7 +116,7 @@ fieldset {
 form {
     margin: 0 auto;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
     width: 1150px;
 }
 
@@ -125,7 +125,8 @@ input[type=text] {
     padding: 12px 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    outline-color: #aaa;
+    outline-color: #aaa;    
+    font-family: 'Quicksand', sans-serif;
 }
 
 .yname {
@@ -147,6 +148,7 @@ textarea {
     width: 98%;
     margin: 0;
     float: left;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .button {
@@ -160,6 +162,7 @@ textarea {
     margin-top: 40px;
     text-decoration: none;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
