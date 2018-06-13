@@ -6,6 +6,8 @@ body, html {
     color: white;
 }
 
+/*** GENERAL USE ***/
+
 /*header {
     background: transparent;
 }
@@ -65,6 +67,7 @@ nav a {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
+    
 }
 
 nav a:hover {

@@ -143,3 +143,24 @@ p.description {
     padding-right: 5%;
     margin-top: 30px;
 }
+
+h8.food-type {
+    display: block;
+    position: absolute;
+    color: black;
+    font-family: 'Suranna', sans-serif;
+    font-size: 1.8em;
+    font-weight: lighter;
+    float: left;
+    margin-left: 40px;
+}
+
+hr.three {
+    border: 0;
+    height: 1px;
+    width: 100px;
+    background-image: linear-gradient(to right, rgba(189, 183, 107, 1), rgba(189, 183, 107, 0.75), rgba(189, 183, 107, 0));
+    float: left;
+    margin-top: 60px;
+    margin-left: 40px; 
+}
