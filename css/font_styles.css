@@ -1,41 +1,75 @@
-/*** INDEX ***/
-.ttl {
+@font-face {
+    font-family: Suranna;
+    src: url("../fonts/Suranna.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Montez;
+    src: url("../fonts/Montez.ttf") format("truetype");
+}
+
+
+.subtitle {
     display: block;
-    color: gold;
+    color: khaki;
+    text-align: center;
+    font-family: 'Montez', cursive;
+    font-size: 1.8em;
+    text-shadow: 0px 0px 60px black;
+    font-weight: lighter;
+}
+
+.title {
+    display: block;
+    color: white;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'Suranna', sans-serif;
+    font-size: 1.8em;
+    font-weight: lighter;
+    text-shadow: 0px 0px 25px black;
+    margin-top: -30px;
 }
 
 .copyright {
     color: rgba(127, 132, 138, 1);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     float: left;
     padding-top: 10px;
 }
 
-/*** CONTACT ***/
-.shrt {
+/*** INDEX ***/
+.oh {
     display: block;
-    color: gold;
     text-align: center;
-    padding-top: 50px;
-}
-
-.big {
-    display: block;
     color: white;
-    text-align: center;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-size: 1.7em;
+    font-size: 0.6em;
+    font-weight: lighter;
+    text-shadow: 0px 0px 5px black;
+    margin-top: 30px;
 }
 
-.hqfu {
+hr.two {
+    border-top: 3px double khaki;
+    width: 240px;
+    margin-top: -7px;
+}
+
+/*** CONTACT ***/
+.haqfu {
     display: block;
     color: darkgoldenrod;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 1em;
+    font-size: 2.07em;
+    font-family: 'Montez', cursive;
 }
 
 .cut {
@@ -43,5 +77,28 @@
     color: black;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.7em;
+    font-size: 2.3em;
+    font-family: 'Suranna', sans-serif;
+    margin-top: -20px;
+}
+
+hr.one {
+    border: 0;
+    height: 1px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgba(184, 134, 11, 0), rgba(184, 134, 11, 0.75), rgba(184, 134, 11, 0));
+    margin-top: -7px;
+}
+
+.p {
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+.n {
+    color: darkgoldenrod;
 }
