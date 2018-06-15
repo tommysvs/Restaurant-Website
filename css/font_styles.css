@@ -36,7 +36,7 @@
     margin-top: -30px;
 }
 
-.info {
+.info-footer {
     display: block;
     text-align: center;
     color: rgba(255, 255, 255, 0.45);
@@ -44,6 +44,17 @@
     font-size: 0.9em;
     font-weight: lighter;
     margin-top: 10px;
+}
+
+.whours-footer {
+    display: block;
+    text-align: center;
+    color: khaki;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: lighter;
+    margin-top: 15px;
+    text-transform: uppercase;
 }
 
 .copyright {
@@ -110,28 +121,6 @@ hr.two {
     text-shadow: 0px 0px 5px black;
 }
 
-/*** CONTACT ***/
-hr.one {
-    border: 0;
-    height: 1px;
-    width: 200px;
-    background-image: linear-gradient(to right, rgba(189, 183, 107, 0), rgba(189, 183, 107, 0.75), rgba(189, 183, 107, 0));
-    margin-top: -7px;
-}
-
-.p {
-    display: block;
-    color: black;
-    text-align: center;
-    font-size: 1.2em;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 40px;
-}
-
-.n {
-    color: darkkhaki;
-}
-
 /*** MENU ***/
 p.description {
     display: block;
@@ -163,4 +152,26 @@ hr.three {
     float: left;
     margin-top: 60px;
     margin-left: 40px; 
+}
+
+/*** CONTACT ***/
+hr.one {
+    border: 0;
+    height: 1px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgba(189, 183, 107, 0), rgba(189, 183, 107, 0.75), rgba(189, 183, 107, 0));
+    margin-top: -7px;
+}
+
+.p {
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+.n {
+    color: darkkhaki;
 }
