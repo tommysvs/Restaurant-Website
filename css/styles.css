@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     background: white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
@@ -67,11 +67,11 @@ nav a {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
-    
 }
 
 nav a:hover {
     color: khaki;
+    transition: all ease .5s;
 }
 
 nav.shrink {
