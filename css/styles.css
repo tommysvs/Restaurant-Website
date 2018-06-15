@@ -45,6 +45,7 @@ nav {
     background-size: 100px;
     padding-left: 40%;
     padding-top: 150px;
+    vertical-align: middle;
 } */
 
 nav ul {
@@ -117,7 +118,7 @@ nav.shrink > ul {
 /*** FOOTER ***/
 footer {
     bottom: 0;
-    height: 71%;
+    height: 500px;
     background: rgba(11, 14, 19, 1);
 }
 
@@ -140,7 +141,66 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px;
-    margin-top: 80px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+form.newsletter {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 85px;
+    width: 500px;
+}
+
+.newsletter-box {
+    height: 40px;
+    width: 300px;
+    background-color: #1d2026;
+    color: #acb8c4;
+    border: none;
+    outline-color:  rgba(11, 14, 19, 1);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.newsletter-box:focus {
+    background-color: #262a31;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.newsletter-button {
+    height: 37px;
+    width: 140px;    
+    background-color: khaki;
+    border: none;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    outline-color: #aaa;
+    font-weight: bold;
+}
+
+.newsletter-button:hover {
+    background-color: darkkhaki;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .copy-container {
@@ -156,7 +216,7 @@ footer {
     bottom: 20px;
     right: 20px;
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     width: 50px;
     height: 50px;
     display: block;
@@ -173,7 +233,7 @@ footer {
 }
 
 #return-to-top i {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.6);
     margin: 0 auto;
     position: relative;
     left: 18px;
@@ -187,12 +247,12 @@ footer {
 }
 
 #return-to-top:hover {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #return-to-top:hover i {
-    color: khaki;
-    top: 10px;
+    color: rgba(189, 183, 107, 0.8);
+    top: 12px;
 }
 
 /*** SCROLLBAR ***/

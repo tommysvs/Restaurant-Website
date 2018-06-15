@@ -163,7 +163,7 @@ fieldset {
     margin: 0;
 }
 
-form {
+form.contact {
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
@@ -171,34 +171,39 @@ form {
 }
 
 input[type=text] {
-    width: 49%;
     padding: 12px 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    outline-color: #aaa;    
-    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;  
+    font-family: 'Montserrat', sans-serif;
 }
 
 .yname {
+    height: 45px;
     float: left;
+    width: 49%;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
+    border: 1px solid #ccc;
+    outline-color: #aaa;  
 }
 
 .yemail {
-    margin-bottom: 20px;
+    height: 45px;
+    width: 49%;
+    margin-bottom: 20px;    
+    border: 1px solid #ccc;
+    outline-color: #aaa;  
 }
 
 textarea {
     outline-color: #aaa;
     border: 1px solid #ccc;
     resize: none;
-    padding: 10px 10px 10px 10px;
+    padding: 15px 15px;
     overflow: hidden;
-    width: 98%;
+    width: 100%;
     margin: 0;
     float: left;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .button {
@@ -212,7 +217,7 @@ textarea {
     margin-top: 40px;
     text-decoration: none;
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
