@@ -7,26 +7,7 @@
 .sec {
     width: 80%;
     margin: 0 auto;
-}
-
-.menu-thumb {
-    height: 100px;
-    width: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 50%;
-    float: left;
-    margin-bottom: 20px;
-}
-
-.menu-desc {
-    width: 40%;
-    margin-left: 100px;
-}
-
-.food-type-cont {
-    width: 50%;
-    margin-bottom: 70px;
+    padding: 0;
 }
 
 /*** HOME ***/
@@ -41,9 +22,10 @@
 }
 
 .sec2-home {
-    height: 60%;
+    height: 80%;
     background-color: white;
     margin: 0 auto;
+    padding: 80px;
     /*box-shadow: inset 0 8px 15px -8px rgba(0,0,0,0.8), inset 0 -8px 15px -8px rgba(0,0,0,0.8); */
 }
 
@@ -55,6 +37,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.sec4-home {
+    height: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
 }
 
 /*** ABOUT ***/
@@ -72,6 +61,58 @@
     height: 80%;
     background-color: white;
     margin: 0 auto;
+    padding: 80px;
+}
+
+.sec3-about { 
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-about {
+    height: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.sec5-about { 
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg4.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec6-about {
+    height: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.sec7-about { 
+    height: 670px;
+    padding: 210px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../images/bg5.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.review-box {
+    margin: 0 auto;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(22, 29, 39, 1);
 }
 
 /*** MENU ***/
@@ -95,32 +136,88 @@
     float: left;
     width: 50%;
     padding: 10px;
-    height:  300px;
 }
 
-ul.foodul {
+ul.foodul > div {
+    position: absolute;
     list-style: none;
     float: left;
     overflow: hidden;
+    list-style-position: inside;
 }
 
 li.foodli {
     display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.menu-thumb img {
+    display: inline-block;
+    height: 98px;
+    width: 98px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    overflow: hidden;  
+    margin-right: 20px;
+}
+
+.menu-desc {
+    display: inline-block;
+    width: 350px;
+    padding: 10px 0;
+    margin-right: 15px;
+    float: left;
+}
+
+.menu-price {
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    color: khaki;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5em;
+    float: left;
+}
+
+.food-type-cont {
+    margin-bottom: 70px;
 }
 
 .sec2-menu {
-    height: 100%;    
+    height: 1000px;    
     background-color: white;
+    padding: 80px;
 }
 
 .sec3-menu {
-    height: 80%;    
+    height: 1000px;    
     background-color: whitesmoke;
+    padding: 80px;
 }
 
 .sec4-menu {
-    height: 80%;    
+    height: 1000px;    
     background-color: white;
+    padding: 80px;
+}
+
+.sec5-menu {
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec6-menu {
+    height: 800px;    
+    background-color: white;
+    padding: 80px;
 }
 
 /*** CONTACT ***/
@@ -135,28 +232,13 @@ li.foodli {
 }
 
 .sec2-contact {
-    height: 90%;
+    height: 670px;
     background-color: white;
     margin: 0 auto;
-}
-
-.sec3-contact {
-    height: 70%;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg10.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.sec4-contact {
-    height: 95%;
-    background-color: white;
-    margin: 0 auto;
+    padding: 80px;
 }
 
 fieldset {
-    display: block;
     border: 0;
     width: 1150px;
     padding: 0px;
@@ -168,6 +250,7 @@ form.contact {
     text-align: center;
     margin-top: 30px;
     width: 1150px;
+    height: auto;
 }
 
 input[type=text] {
@@ -233,6 +316,22 @@ textarea {
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+}
+
+.sec3-contact {
+    height: 70%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg10.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-contact {
+    height: 715px;
+    padding: 80px;
+    background-color: white;
+    margin: 0 auto;
 }
 
 .maps {
