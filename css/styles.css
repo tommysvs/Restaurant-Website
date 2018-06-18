@@ -1,9 +1,9 @@
 body, html {
     height: 100%;
     margin: 0;
-    background: white;
+    background: black;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: white; 
 }
 
 /*** GENERAL USE ***/
@@ -36,14 +36,14 @@ nav {
 nav img {
     visibility: hidden;
     margin: 0;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     background-image: url(../images/logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px;
     padding-left: 40%;
-    padding-top: 150px;
+    padding-top: 70px;
     vertical-align: middle;
 }
 
