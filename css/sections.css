@@ -320,7 +320,7 @@
 }
 
 .sec4-menu {
-    height: 1000px;    
+    height: 550px;    
     background-color: white;
     padding: 80px;
 }
@@ -338,6 +338,12 @@
 .sec6-menu {
     height: 800px;    
     background-color: white;
+    padding: 80px;
+}
+
+.sec7-menu {
+    height: 800px;    
+    background-color: ghostwhite;
     padding: 80px;
 }
 
