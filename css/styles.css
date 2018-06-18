@@ -76,13 +76,13 @@ nav a:hover {
 
 nav.shrink {
     background-color: rgba(11, 14, 19, 0.9);
-    height: 65px;
+    height: 75px;
     padding-top: 0px;
     transition: all ease .5s;
 }
 
 nav.shrink > ul {
-    padding-top: 25px;
+    padding-top: 30px;
     transition: all ease .5s;
     padding-right: 20%;
     font-size: 0.9em;
@@ -117,7 +117,7 @@ nav.shrink > ul {
 /*** FOOTER ***/
 footer {
     bottom: 0;
-    height: 500px;
+    height: 520px;
     background: rgba(11, 14, 19, 1);
 }
 
@@ -140,14 +140,14 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px;
-    margin-top: 60px;
+    margin-top: 55px;
     margin-bottom: 30px;
 }
 
 form.newsletter {
     margin: 0 auto;
     text-align: center;
-    margin-top: 85px;
+    margin-top: 45px;
     width: 500px;
 }
 
