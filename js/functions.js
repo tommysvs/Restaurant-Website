@@ -11,8 +11,8 @@ $(window).scroll(function() {
 /*** GOOGLE MAPS ***/
 function myMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 28.5140656, lng: -81.3828184},
-        zoom: 14,
+        center: {lat: 28.3076268, lng: -81.3837945},
+        zoom: 16,
         styles: [
           {
             "elementType": "geometry",
@@ -176,7 +176,7 @@ function myMap() {
     });
     
     var marker = new google.maps.Marker({
-        position: {lat: 28.5140656, lng: -81.3828184},
+        position: {lat: 28.3076268, lng: -81.3837945},
         animation: google.maps.Animation.BOUNCE
     });
     
