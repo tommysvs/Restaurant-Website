@@ -191,17 +191,49 @@
 }
 
 .menu-price {
+    position: relative;
     width: 80px;
-    height: 98px;
-    color: darkkhaki;
+    height: 98px;    
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    font-size: 1.5em;
-    font-family: 'Montez', cursive;
     text-align: center;
     line-height: 98px;
     cursor: pointer;
+}
+
+.price-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: darkkhaki;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.menu-price:hover .price-overlay {
+    height: 100%;
+}
+
+.price-num {
+    display: block;
+    color: darkkhaki;
+    font-family: 'Montez', cursive;
     font-size: 2.5em;
+}
+
+.addtoCart i {
+    color: white;
+    font-size: 1.5em;
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 
 .sec2-menu {
@@ -211,8 +243,8 @@
 }
 
 .sec3-menu {
-    height: 1000px;    
-    background-color: whitesmoke;
+    height: 950px;    
+    background-color: ghostwhite;
     padding: 80px;
 }
 

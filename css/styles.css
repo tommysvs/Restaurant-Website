@@ -33,7 +33,7 @@ nav {
    /* ... */
 }
 
-/* nav img {
+nav img {
     visibility: hidden;
     margin: 0;
     height: 100px;
@@ -45,7 +45,7 @@ nav {
     padding-left: 40%;
     padding-top: 150px;
     vertical-align: middle;
-} */
+}
 
 nav ul {
     margin: 0;
@@ -88,14 +88,15 @@ nav.shrink > ul {
     font-size: 0.9em;
 }
 
-/* nav.shrink > img {
+nav.shrink > img {
     visibility: visible;
     padding-left: 40%;
-    padding-top: 60px;
+    padding-top: 70px;
     height: 50px;
     width: 50px;
     background-size: 50px;
-} */
+    transition: all ease .5s;
+}
 
 /*** ANIMATIONS ***/
 .sec-animate {
