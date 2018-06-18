@@ -118,14 +118,16 @@ hr.two {
     text-shadow: 0px 0px 5px black;
 }
 
-h8.reviews-title {
+p.box-desc {
     display: block;
-    color: white;
-    font-family: 'Suranna', sans-serif;
-    font-size: 1.5em;
-    font-weight: lighter;
-    text-transform: uppercase;
     text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 30px;
+    line-height: 25px;
 }
 
 /*** ABOUT ***/
@@ -139,6 +141,16 @@ p.about-paragraphs {
     margin-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
+}
+
+h8.reviews-title {
+    display: block;
+    color: white;
+    font-family: 'Suranna', sans-serif;
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 /*** MENU ***/
