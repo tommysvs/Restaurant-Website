@@ -2,7 +2,7 @@
 
 Menu Page<br/>
 Chef biographies<br/>
-Mission statement<br/>
+Mission statement - DONE<br/>
 Description of the place<br/>
 History of the restaturant<br/>
 Fake Reviews<br/>
