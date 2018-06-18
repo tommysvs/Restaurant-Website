@@ -13,12 +13,14 @@
 <body>
     <header>
         <div class="container">
-            <nav>                
+            <nav>
+                <img class="logo"/>
                 <ul>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="menu.html" style="color: khaki;">Menu</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                 </ul>        
             </nav>
         </div>
@@ -39,56 +41,14 @@
 
         <div class="grid-menu">
             <div>
-                <h8 class="food-type">Appetizers</h8>
+                <h8 class="food-type">Soups</h8>
                 <hr class="three">
             </div>
 
             <div>
-                <h8 class="food-type">Soups</h8>
+                <h8 class="food-type">Appetizers</h8>
                 <hr class="three">
-            </div>                
-            
-            <!-- APPETIZERS -->
-            <div>    
-                <div class="grid-items">
-                    <div class="menu-thumb">
-                        <img src="food/16.jpg" alt="Grissini"/>
-                    </div>
-
-                    <div class="menu-desc">
-                        <h9 class="food-title">Grissini</h9>
-                        <p class="food-desc">Freshly baked bread sticks garlic seasoning.</p>
-                    </div>
-
-                    <div class="menu-price">$4</div>
-                </div>
-
-                <div class="grid-items">
-                    <div class="menu-thumb">
-                        <img src="food/10.jpg" alt="Bruschetta al Pomodoro"/>
-                    </div>
-
-                    <div class="menu-desc">
-                        <h9 class="food-title">Bruschetta al Pomodoro</h9>
-                            <p class="food-desc">Chopped fresh tomatoes with traditional seasonings over freshly baked toasted baguette slices.</p>
-                    </div>
-
-                    <div class="menu-price">$5</div>
-                </div>
-
-                <div class="grid-items">
-                    <div class="menu-thumb">
-                        <img src="food/9.jpg" alt="Insalata di casa"/>
-                    </div>
-
-                    <div class="menu-desc">
-                        <h9 class="food-title">Insalata di casa</h9>
-                        <p class="food-desc">Our Traditional salad with fresh crisp romaine lettuce, tomatoes, cucumbers, grated cheese and croutons!</p>
-                    </div>
-
-                    <div class="menu-price">$6</div>
-                </div>
-            </div> 
+            </div>
             
             <!-- SOUPS -->
             <div>    
@@ -102,7 +62,12 @@
                         <p class="food-desc">Sharp fresh cheddar in a savory broth, a local favorite!</p>
                     </div>
 
-                    <div class="menu-price">$8</div>
+                    <div class="menu-price">
+                        <span class="price-num">$4</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid-items">
@@ -115,7 +80,12 @@
                             <p class="food-desc">Chopped sea clams, diced potato, celery, onions and traditional seasonings in a creamy broth. </p>
                     </div>
 
-                    <div class="menu-price">$9</div>
+                    <div class="menu-price">
+                        <span class="price-num">$9</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid-items">
@@ -128,7 +98,12 @@
                         <p class="food-desc">Homestyle potatoes simmered with traditional seasonings in our rich signature alfredo stock.</p>
                     </div>
 
-                    <div class="menu-price">$7</div>
+                    <div class="menu-price">
+                        <span class="price-num">$7</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="grid-items">
@@ -141,7 +116,12 @@
                         <p class="food-desc">White and red beans, ground beef, fresh tomatoes and tubetti pasta in a savory broth.</p>
                     </div>
 
-                    <div class="menu-price">$8</div>
+                    <div class="menu-price">
+                        <span class="price-num">$8</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="grid-items">
@@ -154,21 +134,246 @@
                         <p class="food-desc">A creamy soup made with chicken and traditional noodles.</p>
                     </div>
 
-                    <div class="menu-price">$7</div>
+                    <div class="menu-price">
+                        <span class="price-num">$7</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>    
+            </div>   
+            
+            <!-- APPETIZERS -->
+            <div>    
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/16.jpg" alt="Grissini"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Grissini</h9>
+                        <p class="food-desc">Freshly baked bread sticks garlic seasoning.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$4</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/10.jpg" alt="Bruschetta al Pomodoro"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Bruschetta al Pomodoro</h9>
+                            <p class="food-desc">Chopped fresh tomatoes with traditional seasonings over freshly baked toasted baguette slices.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$5</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/9.jpg" alt="Insalata di casa"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Insalata di casa</h9>
+                        <p class="food-desc">Our Traditional salad with fresh crisp romaine lettuce, tomatoes, cucumbers, grated cheese and croutons!</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$6</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </div>
     </div>
     
     <div class="sec3-menu">
-        <div class="sec">
-            <span class="subtitle2">More specific</span> 
-            <span class="title2">Main dishes</span>
-            <hr class="one">
-            <p class="description">Lorem ipsum dolor sit amet, vim id elitr adipiscing, ut his modus consul propriae, ignota utroque molestiae no mel. Liber equidem noluisse ad est, ex vix solum doctus inimicus, sit te veri expetenda expetendis</p>
-            
-            
-        </div>
+        <span class="subtitle2">More specific</span> 
+        <span class="title2">Main dishes</span>
+        <hr class="one">
+
+        <div class="grid-menu">
+            <div>
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/21.jpg" alt="Fettuccine di pollo"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Fettuccine di pollo</h9>
+                        <p class="food-desc">Traditional fettuccine with grilled chicken strips smothered in our creamy alfredo sauce.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$13</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/5.jpg" alt="Grandi spaghetti e ragù"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Grandi spaghetti e ragù</h9>
+                        <p class="food-desc">A grand plate of our tradtional spaghetti topped with our savory meat sauce.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$12</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/22.jpg" alt="Parmigiana di pollo"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Parmigiana di pollo</h9>
+                        <p class="food-desc">2 lightly breaded chicken breasts served with your choice of spaghetti, linguini or penne pasta.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$14</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/13.jpg" alt="Parmigiana di pollo"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Lasagna di manzo</h9>
+                        <p class="food-desc">Layered with pasta, beef, mozzarella, pecorino romano and our tradtional savory meat sauce.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$15</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/23.jpg" alt="Fettuccine Alfredo"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Fettuccine Alfredo</h9>
+                        <p class="food-desc">Fettuccine pasta served with our creamy alfredo sauce.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$11</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div>
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/24.jpg" alt="Pasta di pesce"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Pasta di pesce</h9>
+                        <p class="food-desc">Fresh smoked white fish over linguini with  garlic, red peppers, cherry tomatoes and finely chopped shallots.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$16</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/25.jpg" alt="Calamari e Linguini"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Calamari e Linguini</h9>
+                        <p class="food-desc">Thinly sliced calamari in linguini wonderfully flavored with garlic, basil anchovies and wine.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$16</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/4.jpg" alt="Pasta ai Gamberetti"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Pasta ai Gamberetti</h9>
+                        <p class="food-desc">Shrimp cooked to perfection with Linguini in a savory light sauce filled with traditional ingredients.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$15</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-items">
+                    <div class="menu-thumb">
+                        <img src="food/26.jpg" alt="Scaloppini"/>
+                    </div>
+
+                    <div class="menu-desc">
+                        <h9 class="food-title">Scaloppini</h9>
+                        <p class="food-desc">Buttery pan seared scallops topped with salt, pepper and lemon juice stirred in garlic and olive oil.</p>
+                    </div>
+
+                    <div class="menu-price">
+                        <span class="price-num">$12</span>
+                        <div class="price-overlay">
+                            <a href="#" class="addtoCart"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>
     
     <div class="sec4-menu">
