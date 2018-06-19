@@ -1,0 +1,478 @@
+/*** BOX SIZING ***/
+* {
+    box-sizing: border-box;
+}
+
+/*** GENERAL USES ***/
+.sec {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*** HOME ***/
+.sec1-home {
+    height: 100%;
+    padding-top: 15%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0,0,0,0.9)), url(../images/bg13.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: default;
+    -webkit-animation: popinanim 2s ease;
+}
+
+@-webkit-keyframes popinanim{
+  0% { 
+    opacity:0;
+    -webkit-transform: scale(0.3);
+  }        
+  10% { 
+    opacity:0;
+    -webkit-transform: scale(0.8);
+  }        
+  60% { 
+    opacity:1;
+    -webkit-transform: scale(1);
+  }
+  100% { 
+    opacity:1;
+    -webkit-transform: scale(1);
+  }
+} 
+
+.sec2-home {
+    height: 810px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../images/bg18.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pres-container {
+    width: 550px;
+    height: 650px;
+    margin: 0 auto;
+    background-color: white;
+    border: 15px solid black;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    padding-top: 120px;
+}
+
+.sec3-home { 
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg8.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-home {
+    height: 800px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+    /*box-shadow: inset 0 8px 15px -8px rgba(0,0,0,0.8), inset 0 -8px 15px -8px rgba(0,0,0,0.8); */
+}
+
+/*** ABOUT ***/
+.sec1-about {
+    height: 80%;
+    padding-top: 15%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg11.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec2-about {
+    height: 1100px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 100px;
+}
+
+.grid-about {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 100px;
+    width: 1200px;
+}
+
+.story-thumb {
+    margin: 0 auto;
+    height: 450px;
+    width: 600px;
+    object-fit: cover;
+    overflow: hidden;
+    background: url(../images/story.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vision-thumb {
+    margin: 0 auto;
+    height: 350px;
+    width: 550px;
+    object-fit: cover;
+    overflow: hidden;
+    background: url(../images/freshfood.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec3-about { 
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-about {
+    height: 1100px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.sec5-about { 
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg4.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec6-about {
+    height: 600px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.grid-chefs {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 100px;
+    width: 1000px;
+}
+
+.sec7-about { 
+    height: 720px;
+    padding: 210px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../images/bg5.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.review-box {
+    margin: 0 auto;
+    width: 1100px;
+    height: 300px;
+    background-color: rgba(22, 29, 39, 1);
+}
+
+.rev1, .rev2 {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.rev-name {
+    color: khaki;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+
+#slideshow { 
+    margin: 0 auto;
+    position: relative; 
+    width: 750px;    
+}
+
+#slideshow > p { 
+    position: absolute;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*** MENU ***/
+.sec1-menu {
+    height: 80%;
+    padding-top: 15%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg17.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.grid-items {
+    display: grid;
+    grid-template-columns: 98px 320px 80px;
+    grid-column-gap: 10px;
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.menu-thumb img {
+    height: 98px;
+    width: 98px;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.menu-desc {
+    width: 320px;
+    height: 98px;
+    text-align: left;
+    padding: 5px;
+}
+
+.menu-price {
+    position: relative;
+    width: 80px;
+    height: 98px;    
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 98px;
+    cursor: pointer;
+}
+
+.price-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: darkkhaki;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.menu-price:hover .price-overlay {
+    height: 100%;
+}
+
+.price-num {
+    display: block;
+    color: darkkhaki;
+    font-family: 'Montez', cursive;
+    font-size: 2.5em;
+}
+
+.addtoCart i {
+    color: white;
+    font-size: 1.5em;
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.sec2-menu {
+    height: 1100px;    
+    background-color: white;
+    padding: 80px;
+}
+
+.sec3-menu {
+    height: 950px;    
+    background-color: ghostwhite;
+    padding: 80px;
+}
+
+.sec4-menu {
+    height: 550px;    
+    background-color: white;
+    padding: 80px;
+}
+
+.sec5-menu {
+    height: 80%;
+    padding-top: 12%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec6-menu {
+    height: 800px;    
+    background-color: white;
+    padding: 80px;
+}
+
+.sec7-menu {
+    height: 800px;    
+    background-color: ghostwhite;
+    padding: 80px;
+}
+
+/*** CONTACT ***/
+.sec1-contact {
+    height: 80%;
+    padding-top: 15%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg9.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec2-contact {
+    height: 670px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+fieldset {
+    border: 0;
+    width: 1150px;
+    padding: 0px;
+    margin: 0;
+}
+
+form.contact {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    width: 1150px;
+    height: auto;
+}
+
+input[type=text] {
+    padding: 12px 15px;
+    box-sizing: border-box;  
+    font-family: 'Montserrat', sans-serif;
+}
+
+.yname {
+    height: 45px;
+    float: left;
+    width: 49%;
+    margin-right: 20px;
+    margin-bottom: 20px;    
+    border: 1px solid #ccc;
+    outline-color: #aaa;  
+}
+
+.yname:focus, .yemail:focus, textarea:focus {
+    background-color: rgba(0, 0, 0, 0.01);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.yemail {
+    height: 45px;
+    width: 49%;
+    margin-bottom: 20px;    
+    border: 1px solid #ccc;
+    outline-color: #aaa;  
+}
+
+textarea {
+    outline-color: #aaa;
+    border: 1px solid #ccc;
+    resize: none;
+    padding: 15px 15px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button {
+    width: 180px;
+    height: 50px;
+    background-color: #161d27;
+    margin: 0 auto;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 40px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    outline-color: #aaa; 
+}
+
+.button:hover {
+    background-color: darkkhaki;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.sec3-contact {
+    height: 70%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg10.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec4-contact {
+    height: 715px;
+    padding: 80px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.maps {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}

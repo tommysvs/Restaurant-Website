@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/font_styles.css">
+    <title>Contact - Nonna's Table</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <span id="home">Nonna's Table</span>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html" style="color: khaki;">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                </ul>        
+            </nav>
+        </div>
+    </header>
+    
+    <div class="sec1-contact">
+         <h1 class="sec-animate">
+            <span class="subtitle">Contact Us</span>
+            <span class="title">Send us a message</span>
+        </h1>        
+    </div>
+    
+    <div class="sec2-contact">
+        <div class="sec">
+            <span class="subtitle2">Have a question for us?</span> 
+            <span class="title2">CONTACT US TODAY</span>
+            <hr class="one">
+            <span class="p">Phone: <span class="n">+ 1 (407) 563 7883</span></span>      
+
+            <form class="contact">
+                <fieldset>
+                    <input type="text" class="yname" placeholder="Your name...">
+                    <input type="text" class="yemail" placeholder="Email...">
+                </fieldset>
+                <fieldset>
+                    <textarea placeholder="Message..." rows="8"></textarea>
+                </fieldset>            
+                <input class="button" type="submit" value="SEND" >
+            </form>
+        </div>
+    </div>
+    
+    <div class="sec3-contact"></div>
+    
+    <div class="sec4-contact">
+        <div class="sec">
+            <span class="subtitle2">Visit us</span> 
+            <span class="title2">Try our taste!</span>
+            <hr class="one">
+            <div id="map" class="maps"></div>
+        </div>
+    </div>
+    
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+    <footer>
+        <div class="line"></div>
+        <div class="info-container">
+            <span class="logo">Nonna's Table</span>
+            <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
+            
+            <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
+            <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
+            <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
+            <span class="info-footer">SAT - SUN: 11:00 A.M. - 11:00 P.M.</span>
+            <span class="title-footer">Phone: <span style="color: rgba(255, 255, 255, 0.45);">+1 (407) 563 7883</span></span>
+            <form class="newsletter">
+                <input type="text" class="newsletter-box" placeholder="Subscribe to our newsletter">
+                <input type="submit" value="SUBMIT" class="newsletter-button">
+            </form>
+        </div>
+        
+        <div class="line" style="margin-top: 30px;"></div>
+        
+        <div class="copy-container">
+            <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>    
+    <script src="js/functions.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkj_5nkYxlYhUTGeXXhfwcs_FMyRptlaQ&callback=myMap&language=en&region=US"></script>
+</body>
+</html>
