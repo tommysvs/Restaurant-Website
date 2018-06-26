@@ -1,9 +1,9 @@
 body, html {
     height: 100%;
     margin: 0;
-    background: white;
+    background: black;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: white;   
 }
 
 /*** GENERAL USE ***/
@@ -33,18 +33,34 @@ nav {
    /* ... */
 }
 
-nav img {
+/* nav img {
     visibility: hidden;
     margin: 0;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     background-image: url(../images/logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px;
     padding-left: 40%;
-    padding-top: 150px;
+    padding-top: 70px;
     vertical-align: middle;
+} */
+
+nav span {
+    visibility: hidden;
+    float: left;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Suranna', sans-serif;
+    font-size: 1.8em;
+    font-weight: lighter;
+    padding-top: 5px;
+    margin-left: 10%;
+}
+
+nav span:hover {
+    color: khaki;
 }
 
 nav ul {
@@ -88,7 +104,7 @@ nav.shrink > ul {
     font-size: 0.9em;
 }
 
-nav.shrink > img {
+/* nav.shrink > img {
     visibility: visible;
     padding-left: 40%;
     padding-top: 70px;
@@ -96,6 +112,14 @@ nav.shrink > img {
     width: 50px;
     background-size: 50px;
     transition: all ease .5s;
+} */
+
+nav.shrink > span {
+    visibility: visible;
+    padding-top: 5px;
+    margin-left: 20%;
+    transition: all ease .5s;
+    cursor: pointer;
 }
 
 /*** ANIMATIONS ***/
@@ -131,9 +155,10 @@ footer {
 .info-container {
     width: 500px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.info-logo {
+/* .logo {
     margin: 0 auto;
     height: 100px;
     width: 100px;
@@ -143,11 +168,21 @@ footer {
     background-size: 100px;
     margin-top: 55px;
     margin-bottom: 30px;
+} */
+
+.logo {    
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Suranna', sans-serif;
+    font-size: 3.2em;
+    font-weight: lighter;
+    margin-top: 55px;
+    margin-bottom: 20px;
 }
 
 form.newsletter {
     margin: 0 auto;
-    text-align: center;
     margin-top: 45px;
     width: 500px;
 }
@@ -257,21 +292,21 @@ form.newsletter {
 
 /*** SCROLLBAR ***/
 body::scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::scrollbar-thumb {
     background-color: khaki;
     border-radius: 5px;
 }
 body::-moz-scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::-moz-scrollbar-thumb {
     background-color: khaki;
     -moz-border-radius: 5px;
 } 
 body::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::-webkit-scrollbar-thumb {
     background-color: khaki;
@@ -280,14 +315,14 @@ body::-webkit-scrollbar-thumb {
 
 /*** SELECTION ***/
 ::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }
 -moz-::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }
 -webkit-::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }

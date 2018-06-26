@@ -130,6 +130,19 @@ p.box-desc {
     line-height: 25px;
 }
 
+.chef-title {
+    color: black;
+    font-size: 2em;
+    font-family: 'Suranna', sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+p.chef-desc {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
+}
+
 /*** ABOUT ***/
 p.about-paragraphs {
     display: block;
@@ -147,10 +160,11 @@ h8.reviews-title {
     display: block;
     color: white;
     font-family: 'Suranna', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: lighter;
     text-transform: uppercase;
     text-align: center;
+    padding-top: 50px;
 }
 
 /*** MENU ***/
@@ -173,7 +187,6 @@ h8.food-type {
     font-size: 1.8em;
     font-weight: lighter;
     float: left;
-    margin-left: 40px;
 }
 
 hr.three {
@@ -183,7 +196,6 @@ hr.three {
     background-image: linear-gradient(to right, rgba(189, 183, 107, 1), rgba(189, 183, 107, 0.75), rgba(189, 183, 107, 0));
     float: left;
     margin-top: 60px;
-    margin-left: 40px; 
 }
 
 h9.food-title {
