@@ -196,3 +196,20 @@ $('#return-to-top').click(function() {
         scrollTop : 0 
     }, 500);
 });
+
+/*** REVIEWS SLIDER ***/
+$("#slideshow > p:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > p:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  10000);
+
+/*** REDIRECT LOGO ***/
+document.getElementById("home").onclick = function () {
+    location.href = "home.html";
+};
