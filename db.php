@@ -1,13 +1,11 @@
 <?php
 /*File to connect to the database*/
 
-$mysqli = new mysqli('localhost', 'root', '', 'restaurant' );
+$mysqli = new mysqli('localhost', 'root', 'Michael#77', 'restaurant');
 /* check connection */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
+if ($mysqli->connect_error) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
 //select a database to work with
-$mysqli->select_db("restaurant");
-
-?>
+$mysqli->select_db('restaurant');
