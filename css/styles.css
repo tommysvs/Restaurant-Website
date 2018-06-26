@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     background: black;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: white;   
 }
 
 /*** GENERAL USE ***/
@@ -292,21 +292,21 @@ form.newsletter {
 
 /*** SCROLLBAR ***/
 body::scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::scrollbar-thumb {
     background-color: khaki;
     border-radius: 5px;
 }
 body::-moz-scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::-moz-scrollbar-thumb {
     background-color: khaki;
     -moz-border-radius: 5px;
 } 
 body::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
 }
 body::-webkit-scrollbar-thumb {
     background-color: khaki;
@@ -315,14 +315,14 @@ body::-webkit-scrollbar-thumb {
 
 /*** SELECTION ***/
 ::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }
 -moz-::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }
 -webkit-::selection {
-      background: khaki;
-      color: black;
+      background: black;
+      color: white;
 }
