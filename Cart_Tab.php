@@ -24,117 +24,16 @@ require 'db.php';
 <body>
 <div class="container" style="width:1000px;">
     <h3 align="center">Orders</h3>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#products">All Products</a></li>
-        <li><a data-toggle="tab" href="#desserts">Desserts</a></li>
-        <li><a data-toggle="tab" href="#cart">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
+    <ul>
+        <li><a href="#products">Product</a></li>
+        <li><a href="#desserts">Desserts</a></li>
+        <li><a href="#cart">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
                         echo count($_SESSION["shopping_cart"]);
                     } else {
                         echo '0';
                     } ?></span></a></li>
     </ul>
-    <div class="tab-content">
-        <div id="products" class="tab-pane fade in active">
-            <?php
-
-            require 'db.php';
-            $query = 'SELECT * FROM PRODUCTS ORDER BY PRODUCT_ID ASC';
-
-            /* Try to query the database */
-            if ($result = $mysqli->query($query)) {
-                // Verify that there are more than 0 rows
-                if ($result->num_rows > 0) {
-                    // Fetch and print associated rows
-                    while ($row = $result->fetch_assoc()) {
-                        // print_r($product);
-                        ?>
-                        <!-- Columns that will display products -->
-                        <div class="col-sm-4 col-md-3">
-                            <!-- Uses post to send the Product ID to the URL -->
-                            <div class="products">
-                                <!-- Prints the Product Name -->
-                                <img src="<?php echo $row['Product_Image']; ?>" class="img-responsive"/><br/>
-                                <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p><?php echo $row['Product_Description']; ?></p>
-                                <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
-                                <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
-                                       class="form-control" value="1"/>
-                                <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Name"]; ?>"/>
-                                <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Price"]; ?>"/>
-                                <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
-                                       style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
-                                       value="Add to Cart"/>
-                                <br>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-            } else {
-                echo "Error getting products from the database: " . $mysqli->error . "<br>";
-            }
-            ?>
-        </div>
-        <!-------------------------------------------
-
-         Desserts Tab
-
-        --------------------------------------------->
-        <div id="desserts" class="tab-pane fade">
-            <?php
-
-            require 'db.php';
-            $query = "SELECT * FROM PRODUCTS 
-                      WHERE Product_Type = 'Dessert'
-                      ORDER BY PRODUCT_ID ASC";
-
-            /* Try to query the database */
-            if ($result = $mysqli->query($query)) {
-                // Verify that there are more than 0 rows
-                if ($result->num_rows > 0) {
-                    // Fetch and print associated rows
-                    while ($row = $result->fetch_assoc()) {
-                        // print_r($product);
-                        ?>
-                        <!-- Columns that will display products -->
-                        <div class="col-sm-4 col-md-3">
-                            <!-- Uses post to send the Product ID to the URL -->
-                            <div class="products">
-                                <!-- Prints the Product Name -->
-                                <img src="<?php echo $row['Product_Image']; ?>" class="img-responsive"/><br/>
-                                <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p><?php echo $row['Product_Description']; ?></p>
-                                <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
-                                <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
-                                       class="form-control" value="1"/>
-                                <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Name"]; ?>"/>
-                                <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Price"]; ?>"/>
-                                <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
-                                       style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
-                                       value="Add to Cart"/>
-                                <br>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-            } else {
-                echo "Error getting products from the database: " . $mysqli->error . "<br>";
-            }
-            ?>
-        </div>
-        <!-------------------------------------------
-
-        Cart Tab
-
-        --------------------------------------------->
-        <div id="cart" class="tab-pane fade">
+        <div id="cart">
             <div class="table-responsive" id="order_table">
                 <table class="table table-bordered">
                     <tr>
@@ -197,7 +96,6 @@ require 'db.php';
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>
 <script>
@@ -268,5 +166,3 @@ require 'db.php';
         });
     });
 </script>
-
-
