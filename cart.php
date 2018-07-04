@@ -1,11 +1,12 @@
 <?php
-require 'CartTracker.php';
+//cart.php
+session_start();
+require 'db.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Shopping Cart</title>
-    <meta charset="UTF-8">
+    <title>cart</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -13,110 +14,99 @@ require 'CartTracker.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="cart.css">
-
 </head>
 <body>
-<div class="container">
+<br/>
+<div class="container" style="width:800px;">
     <?php
-
-    require 'db.php';
-    $query = 'SELECT * FROM PRODUCTS ORDER BY PRODUCT_ID ASC';
-
-    /* Try to query the database */
-    if ($result = $mysqli->query($query)) {
-        // Verify that there are more than 0 rows
-        if ($result->num_rows > 0) {
-            // Fetch and print associated rows
-            while ($product = $result->fetch_assoc()) {
-                // print_r($product);
-                ?>
-                <!-- Columns that will display products -->
-                <div class="col-sm-4 col-md-3">
-                    <!-- Uses post to send the Product ID to the URL -->
-                    <form method="post" action="cart.php?action=add&id=<?php echo $product['Product_ID']; ?>">
-                        <div class="products">
-                            <!-- Prints the Product Name -->
-                            <img src="<?php echo $product['Product_Image']; ?>" class="img-responsive"/>
-                            <h4 class="text-info"><?php echo $product['Product_Name']; ?></h4>
-                            <p><?php echo $product['Product_Description']; ?></p>
-                            <h4>$ <?php echo $product['Product_Price']; ?></h4>
-                            <input type="text" name="quantity" class="form-control" value="1"/>
-                            <input type="hidden" name="name" value="<?php echo $product['Product_Name']; ?>"/>
-                            <input type="hidden" name="price" value="<?php echo $product['Product_Price']; ?>"/>
-                            <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-info"
-                                   value="Add to Cart"/>
-                        </div>
-                        <br>
-                    </form>
-                </div>
-
-                <?php
-            }
+    if (isset($_POST["place_order"])) {
+        $insert_order = "  
+                     INSERT INTO tbl_order(customer_id, creation_date, order_status)  
+                     VALUES('1', '" . date('Y-m-d') . "', 'pending')  
+                     ";
+        $order_id = "";
+        if (mysqli_query($connect, $insert_order)) {
+            $order_id = mysqli_insert_id($connect);
         }
-    } else {
-        echo "Error getting products from the database: " . $mysqli->error . "<br>";
+        $_SESSION["order_id"] = $order_id;
+        $order_details = "";
+        foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+            $order_details .= "  
+                          INSERT INTO tbl_order_details(order_id, product_name, product_price, product_quantity)  
+                          VALUES('" . $order_id . "', '" . $values["product_name"] . "', '" . $values["product_price"] . "', '" . $values["product_quantity"] . "');  
+                          ";
+        }
+        if (mysqli_multi_query($connect, $order_details)) {
+            unset($_SESSION["shopping_cart"]);
+            echo '<script>alert("You have successfully place an order...Thank you")</script>';
+            echo '<script>window.location.href="cart.php"</script>';
+        }
+    }
+    if (isset($_SESSION["order_id"])) {
+        $customer_details = '';
+        $order_details = '';
+        $total = 0;
+        $query = '  
+                     SELECT * FROM tbl_order  
+                     INNER JOIN tbl_order_details  
+                     ON tbl_order_details.order_id = tbl_order.order_id  
+                     INNER JOIN tbl_customer  
+                     ON tbl_customer.CustomerID = tbl_order.customer_id  
+                     WHERE tbl_order.order_id = "' . $_SESSION["order_id"] . '"  
+                     ';
+        $result = mysqli_query($connect, $query);
+        while ($row = mysqli_fetch_array($result)) {
+            $customer_details = '  
+                          <label>' . $row["CustomerName"] . '</label>  
+                          <p>' . $row["Address"] . '</p>  
+                          <p>' . $row["City"] . ', ' . $row["PostalCode"] . '</p>  
+                          <p>' . $row["Country"] . '</p>  
+                          ';
+            $order_details .= "  
+                               <tr>  
+                                    <td>" . $row["product_name"] . "</td>  
+                                    <td>" . $row["product_quantity"] . "</td>  
+                                    <td>" . $row["product_price"] . "</td>  
+                                    <td>" . number_format($row["product_quantity"] * $row["product_price"], 2) . "</td>  
+                               </tr>  
+                          ";
+            $total = $total + ($row["product_quantity"] * $row["product_price"]);
+        }
+        echo '  
+                     <h3 align="center">Order Summary for Order No.' . $_SESSION["order_id"] . '</h3>  
+                     <div class="table-responsive">  
+                          <table class="table">  
+                               <tr>  
+                                    <td><label>Customer Details</label></td>  
+                               </tr>  
+                               <tr>  
+                                    <td>' . $customer_details . '</td>  
+                               </tr>  
+                               <tr>  
+                                    <td><label>Order Details</label></td>  
+                               </tr>  
+                               <tr>  
+                                    <td>  
+                                         <table class="table table-bordered">  
+                                              <tr>  
+                                                   <th width="50%">Product Name</th>  
+                                                   <th width="15%">Quantity</th>  
+                                                   <th width="15%">Price</th>  
+                                                   <th width="20%">Total</th>  
+                                              </tr>  
+                                              ' . $order_details . '  
+                                              <tr>  
+                                                   <td colspan="3" align="right"><label>Total</label></td>  
+                                                   <td>' . number_format($total, 2) . '</td>  
+                                              </tr>  
+                                         </table>  
+                                    </td>  
+                               </tr>  
+                          </table>  
+                     </div>  
+                     ';
     }
     ?>
-    <div style="clear:both"></div>
-    <br/>
-    <div class="table-responsive">
-        <table class="table">
-            <tr>
-                <th colspan="5"><h3>Order Details</h3></th>
-            </tr>
-            <tr>
-                <th width="40%">Product Name</th>
-                <th width="10%">Quantity</th>
-                <th width="20%">Price</th>
-                <th width="15%">Total</th>
-                <th width="5%">Action</th>
-            </tr>
-            <?php
-            if (!empty($_SESSION['shopping_cart'])) {
-
-                $total = 0;
-
-                foreach ($_SESSION['shopping_cart'] as $key => $product):
-                    ?>
-                    <tr>
-                        <td><?php echo $product['name']; ?></td>
-
-                        <td><?php echo $product['quantity']; ?></td>
-                        <td>$ <?php echo $product['price']; ?></td>
-                        <td>$ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>
-                        <td>
-                            <a href="cart.php?action=delete&id=<?php echo $product['id']; ?>">
-                                <div class="btn-danger">Remove</div>
-                            </a>
-                        </td>
-                    </tr>
-                    <?php
-                    $total = $total + ($product['quantity'] * $product['price']);
-                endforeach;
-                ?>
-                <tr>
-                    <td colspan="3" align="right">Total</td>
-                    <td align="right">$ <?php echo number_format($total, 2); ?></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <!-- Show checkout button only if the shopping cart is not empty -->
-                    <td colspan="5">
-                        <?php
-                        if (isset($_SESSION['shopping_cart'])) {
-                            if (count($_SESSION['shopping_cart']) > 0) {
-                                ?>
-                                <a href="#" class="button">Checkout</a>
-                            <?php };
-                        }; ?>
-                    </td>
-                </tr>
-                <?php
-            };
-            ?>
-        </table>
-    </div>
 </div>
 </body>
 </html>
