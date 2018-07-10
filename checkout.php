@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
 
+    <!--Do not use bootstrap on this page-->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="jquery.timepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="jquery.timepicker.css"/>
+    <script type="text/javascript" src="jquery.ui.timepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.ui.timepicker.css"/>
     <script>
         $(function () {
             $("#datepicker").datepicker({
@@ -25,12 +21,28 @@
 
         $(function () {
             $('#timepicker').timepicker({
-                'disableTimeRanges': [
-                    ['12am', '11am'],
-                    ['10pm', '11:59pm']
-                ]
+                showPeriod: true,
+                onHourShow: OnHourShowCallback,
+                onMinuteShow: OnMinuteShowCallback
             });
         });
+
+        function OnHourShowCallback(hour) {
+            if ((hour > 21) || (hour < 11)) {
+                return false; // not valid
+            }
+            return true; // valid
+        }
+
+        function OnMinuteShowCallback(hour, minute) {
+            if ((hour == 21) && (minute >= 30)) {
+                return false;
+            } // not valid
+            if ((hour == 11) && (minute < 30)) {
+                return false;
+            }   // not valid
+            return true;  // valid
+        }
     </script>
 
     <title>Checkout</title>
@@ -86,12 +98,12 @@
 
         <!-- Date Picker Field -->
         <label for="datepicker"><i class="fa fa-envelope"></i>Date of Pickup</label>
-        <input type="text" id="datepicker" name="date">
+        <input type="text" id="datepicker" name="date" readonly="readonly">
         <br>
 
         <!-- Time Picker Field -->
         <label for="timepicker"><i class="fa fa-envelope"></i>Time of Pickup</label>
-        <input type="text" id="timepicker" name="date">
+        <input type="text" id="timepicker" name="time" readonly="readonly">
         <br>
 
 
