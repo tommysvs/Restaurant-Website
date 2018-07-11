@@ -17,7 +17,11 @@ $phoneNumber = $_POST['phoneNumber'];
 if (isset($_POST['date'])) {
     $date = $_POST['date'];
 }
-$date = date("Y-m-d h:i:s", strtotime($date));
+if (isset($_POST['time'])) {
+    $time = $_POST['time'];
+}
+$date = $date.$time;
+$date = date("Y-m-d H:i:s", strtotime($date));
 
 
 //Build a SQL Query using the values from above
@@ -30,7 +34,7 @@ $query = "INSERT INTO customers
 
 // Print the query to the browser so you can see it
 echo($query . "<br>");
-echo($date);
+echo($date . "<br>" . $time);
 /*Try to insert into the database*/
 if ($result = $mysqli->query($query)) {
     echo "<p>You have successfully entered values into the database.</p>";

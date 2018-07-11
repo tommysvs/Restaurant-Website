@@ -81,9 +81,12 @@ if (isset($_POST["product_id"])) {
                 </tr>  
                 <tr>  
                      <td colspan="5" align="center">  
-                          <form method="post" action="shopping-cart.php">  
-                               <input type="submit" name="place_order" class="btn btn-warning" value="Place Order" />  
-                          </form>  
+                                <button id="goToCheckout" class="submit-button">Checkout</button>
+                                <script type="text/javascript">
+                                    document.getElementById("goToCheckout").onclick = function () {
+                                        location.href = "checkout.php";
+                                    };
+                                </script>
                      </td>  
                 </tr>  
            ';
