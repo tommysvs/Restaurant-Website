@@ -26,7 +26,7 @@ require 'db.php';
     <h3 align="center">Orders</h3>
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#products">All Products</a></li>
-        <li><a data-toggle="tab" href="#desserts">Desserts</a></li>
+        <li><a data-toggle="tab" href="#entrees">Entrees</a></li>
         <li><a data-toggle="tab" href="#cart">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
                         echo count($_SESSION["shopping_cart"]);
                     } else {
@@ -49,13 +49,17 @@ require 'db.php';
                         // print_r($product);
                         ?>
                         <!-- Columns that will display products -->
-                        <div class="col-sm-4 col-md-3">
+                        <div class="col-sm-3 col-md-4">
                             <!-- Uses post to send the Product ID to the URL -->
                             <div class="products">
                                 <!-- Prints the Product Name -->
-                                <img src="<?php echo $row['Product_Image']; ?>" class="img-responsive"/><br/>
+                                <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
                                 <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p><?php echo $row['Product_Description']; ?></p>
+                                <p class="collapse"
+                                   id="viewdetails<?php echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
+                                <p><a class="btn" data-toggle="collapse"
+                                      data-target="#viewdetails<?php echo $row['Product_ID']; ?>">View details
+                                        &raquo;</a></p>
                                 <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
                                 <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
                                        class="form-control" value="1"/>
@@ -80,15 +84,15 @@ require 'db.php';
         </div>
         <!-------------------------------------------
 
-         Desserts Tab
+         Entrees Tab
 
         --------------------------------------------->
-        <div id="desserts" class="tab-pane fade">
+        <div id="entrees" class="tab-pane fade">
             <?php
 
             require 'db.php';
             $query = "SELECT * FROM PRODUCTS 
-                      WHERE Product_Type = 'Dessert'
+                      WHERE Product_Type = 'Entree'
                       ORDER BY PRODUCT_ID ASC";
 
             /* Try to query the database */
@@ -100,13 +104,17 @@ require 'db.php';
                         // print_r($product);
                         ?>
                         <!-- Columns that will display products -->
-                        <div class="col-sm-4 col-md-3">
+                        <div class="col-sm-3 col-md-4">
                             <!-- Uses post to send the Product ID to the URL -->
                             <div class="products">
                                 <!-- Prints the Product Name -->
-                                <img src="<?php echo $row['Product_Image']; ?>" class="img-responsive"/><br/>
+                                <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
                                 <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p><?php echo $row['Product_Description']; ?></p>
+                                <p class="collapse" id="viewdetails<?php echo $row['Product_Type'];
+                                echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
+                                <p><a class="btn" data-toggle="collapse"
+                                      data-target="#viewdetails<?php echo $row['Product_Type'];
+                                      echo $row['Product_ID']; ?>">View details &raquo;</a></p>
                                 <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
                                 <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
                                        class="form-control" value="1"/>
