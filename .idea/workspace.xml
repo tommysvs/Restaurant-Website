@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c787634d-af6f-4582-af13-7026c0a25983" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Restaurant-Website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Restaurant-Website.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubmitOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/SubmitOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jquery.timepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/jquery.timepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jquery.timepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jquery.timepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -131,8 +89,8 @@
       <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="72">
+              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -175,9 +133,9 @@
         <option value="$PROJECT_DIR$/action.php" />
         <option value="$PROJECT_DIR$/SubmitOrder.php" />
         <option value="$PROJECT_DIR$/checkout.php" />
-        <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/cart.css" />
         <option value="$PROJECT_DIR$/shopping-cart.php" />
+        <option value="$PROJECT_DIR$/db.php" />
       </list>
     </option>
   </component>
@@ -196,7 +154,7 @@
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP on XAMPP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-68" />
     <option name="y" value="-9" />
     <option name="width" value="1382" />
@@ -297,7 +255,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104490000" />
+    <option name="totallyTimeSpent" value="104775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -652,8 +610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="72">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
         </state>
       </provider>
     </entry>
