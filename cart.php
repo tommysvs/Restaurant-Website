@@ -2,6 +2,12 @@
 //cart.php
 session_start();
 require 'db.php';
+/* $_SESSION['post-data'] = $_POST; */
+
+/* echo( $_SESSION['post-data']['firstName']. "<br>"); 8/
+
+$date = date("Y-m-d H:i:s", strtotime($date));
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,32 +20,80 @@ require 'db.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+    <style>
+        @media print {
+            #print {
+                display: none;
+            }
+
+            #makeAnotherOrder {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 <br/>
 <div class="container" style="width:800px;">
     <?php
+
     if (isset($_POST["place_order"])) {
+        $email = $_POST['email'];
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $region = $_POST['region'];
+        $country = $_POST['country'];
+        $postalCode = $_POST['postalCode'];
+        $phoneNumber = $_POST['phoneNumber'];
+        if (isset($_POST['date'])) {
+            $date = $_POST['date'];
+        }
+        if (isset($_POST['time'])) {
+            $time = $_POST['time'];
+        }
+        $date = $date . $time;
+        $date = date("Y-m-d H:i:s", strtotime($date));
+        $totalPrice = $_SESSION['total_price'];
+
+
+        $insert_customer = "INSERT INTO customers
+         (Customer_Email, Customer_First_Name, Customer_Last_Name, Customer_Address, Customer_City,
+          Customer_State, Customer_Country, Customer_Postal_Code, Customer_Phone )
+         VALUES ( '$email', '$firstName', '$lastName', '$address', '$city', '$region', '$country', '$postalCode',
+        '$phoneNumber' )";
+        $customer_id = "";
+        if ($mysqli->query($insert_customer)) {
+            $customer_id = $mysqli->insert_id;
+        } else {
+            echo "Error entering values into database: " . $mysqli->error . "<br>";
+        }
+
         $insert_order = "  
-                     INSERT INTO tbl_order(customer_id, creation_date, order_status)  
-                     VALUES('1', '" . date('Y-m-d') . "', 'pending')  
+                     INSERT INTO orders(Customer_ID, Order_Submitted_Date, Order_Pickup_Date, Order_Receipt_Code, Order_Total_Price)  
+                     VALUES('" . $customer_id . "', '" . date('Y-m-d H:i:s') . "', '" . $date . "', '111111',  '" . $_SESSION['total_price'] . "')
                      ";
         $order_id = "";
-        if (mysqli_query($connect, $insert_order)) {
-            $order_id = mysqli_insert_id($connect);
+        if ($mysqli->query($insert_order)) {
+            $order_id = $mysqli->insert_id;
+        } else {
+            echo "Error entering values into database: " . $mysqli->error . "<br>";
         }
         $_SESSION["order_id"] = $order_id;
         $order_details = "";
         foreach ($_SESSION["shopping_cart"] as $keys => $values) {
             $order_details .= "  
-                          INSERT INTO tbl_order_details(order_id, product_name, product_price, product_quantity)  
-                          VALUES('" . $order_id . "', '" . $values["product_name"] . "', '" . $values["product_price"] . "', '" . $values["product_quantity"] . "');  
+                          INSERT INTO order_lines(Order_ID, Product_ID, Order_Product_Quantity)  
+                          VALUES('" . $order_id . "', '" . $values["product_id"] . "', '" . $values["product_quantity"] . "');  
                           ";
         }
-        if (mysqli_multi_query($connect, $order_details)) {
+        if ($mysqli->multi_query($order_details)) {
             unset($_SESSION["shopping_cart"]);
-            echo '<script>alert("You have successfully place an order...Thank you")</script>';
+            echo '<script>alert("You have successfully placed an order...Thank you")</script>';
             echo '<script>window.location.href="cart.php"</script>';
+        } else {
+            echo "Error entering values into database: " . $mysqli->error . "<br>";
         }
     }
     if (isset($_SESSION["order_id"])) {
@@ -47,30 +101,39 @@ require 'db.php';
         $order_details = '';
         $total = 0;
         $query = '  
-                     SELECT * FROM tbl_order  
-                     INNER JOIN tbl_order_details  
-                     ON tbl_order_details.order_id = tbl_order.order_id  
-                     INNER JOIN tbl_customer  
-                     ON tbl_customer.CustomerID = tbl_order.customer_id  
-                     WHERE tbl_order.order_id = "' . $_SESSION["order_id"] . '"  
+                     SELECT * FROM orders  
+                     INNER JOIN customers  
+                     ON customers.Customer_ID = orders.Customer_ID 
+                     WHERE orders.Order_ID = "' . $_SESSION["order_id"] . '"  
                      ';
-        $result = mysqli_query($connect, $query);
+        $result = $mysqli->query($query);
         while ($row = mysqli_fetch_array($result)) {
             $customer_details = '  
-                          <label>' . $row["CustomerName"] . '</label>  
-                          <p>' . $row["Address"] . '</p>  
-                          <p>' . $row["City"] . ', ' . $row["PostalCode"] . '</p>  
-                          <p>' . $row["Country"] . '</p>  
+                          <label>' . $row["Customer_Last_Name"] . ', ' . $row["Customer_First_Name"] . '</label>  
+                          <p>' . $row["Customer_Address"] . '</p>  
+                          <p>' . $row["Customer_City"] . ', ' . $row["Customer_Postal_Code"] . '</p>  
+                          <p>' . $row["Customer_Country"] . '</p>  
                           ';
+        }
+        $query = '  
+                     SELECT * FROM order_lines  
+                     INNER JOIN orders  
+                     ON orders.Order_ID = order_lines.Order_ID
+                     INNER JOIN products  
+                     ON products.Product_ID = order_lines.Product_ID 
+                     WHERE order_lines.Order_ID = "' . $_SESSION["order_id"] . '"  
+                     ';
+        $result = $mysqli->query($query);
+        while ($row = mysqli_fetch_array($result)) {
             $order_details .= "  
                                <tr>  
-                                    <td>" . $row["product_name"] . "</td>  
-                                    <td>" . $row["product_quantity"] . "</td>  
-                                    <td>" . $row["product_price"] . "</td>  
-                                    <td>" . number_format($row["product_quantity"] * $row["product_price"], 2) . "</td>  
+                                    <td>" . $row["Product_Name"] . "</td>  
+                                    <td>" . $row["Order_Product_Quantity"] . "</td>  
+                                    <td>" . $row["Product_Price"] . "</td>  
+                                    <td>" . number_format($row["Order_Product_Quantity"] * $row["Product_Price"], 2) . "</td>  
                                </tr>  
                           ";
-            $total = $total + ($row["product_quantity"] * $row["product_price"]);
+            $total = $total + ($row["Order_Product_Quantity"] * $row["Product_Price"]);
         }
         echo '  
                      <h3 align="center">Order Summary for Order No.' . $_SESSION["order_id"] . '</h3>  
@@ -100,11 +163,34 @@ require 'db.php';
                                                    <td>' . number_format($total, 2) . '</td>  
                                               </tr>  
                                          </table>  
+                                                                         
+                                
+                                       <input type="button" 
+                                       style="margin-top:5px;" id= "print" class="btn btn-info print"
+                                       value="Print"/>
+                                <script type="text/javascript">
+                                    document.getElementById("print").onclick = function () {
+                                        
+                                        window.print();
+                                    };
+                                </script>
+                                         
+                                       <input type="button" 
+                                       style="margin-top:5px;" id= "makeAnotherOrder" class="btn btn-info make-new-order"
+                                       value="Make another order"/>
+                                <script type="text/javascript">
+                                    document.getElementById("makeAnotherOrder").onclick = function () {
+                                        location.href = "all-products-tab.php";
+                                    };
+                                </script>
+
                                     </td>  
                                </tr>  
                           </table>  
                      </div>  
                      ';
+    } else {
+        echo "Error getting values from database: " . $mysqli->error . "<br>";
     }
     ?>
 </div>

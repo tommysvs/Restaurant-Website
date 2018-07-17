@@ -72,6 +72,7 @@ if (isset($_POST["product_id"])) {
                      </tr>  
                 ';
             $total = $total + ($values["product_quantity"] * $values["product_price"]);
+            $_SESSION['total_price'] = $total;
         }
         $order_table .= '  
                 <tr>  

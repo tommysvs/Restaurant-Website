@@ -22,79 +22,88 @@ require 'db.php';
 
 </head>
 <body>
+
+<header>
+    <div class="container ">
+        <nav>
+            <span id="home">Nonna's Table</span>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html" style="color: khaki;">About</a></li>
+                <li><a href="all-products-tab.php">Order Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <div class="container" style="width:1000px;">
     <h3 align="center">Orders</h3>
-    <ul>
-        <li><a href="#products">Product</a></li>
-        <li><a href="#desserts">Desserts</a></li>
-        <li><a href="#cart">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
-                        echo count($_SESSION["shopping_cart"]);
-                    } else {
-                        echo '0';
-                    } ?></span></a></li>
-    </ul>
-        <div id="cart">
-            <div class="table-responsive" id="order_table">
-                <table class="table table-bordered">
-                    <tr>
-                        <th colspan="5"><h3>Order Details</h3></th>
-                    </tr>
-                    <tr>
-                        <th width="40%">Product Name</th>
-                        <th width="10%">Quantity</th>
-                        <th width="20%">Price</th>
-                        <th width="15%">Total</th>
-                        <th width="5%">Action</th>
-                    </tr>
-                    <?php
-                    if (!empty($_SESSION['shopping_cart'])) {
+    <p>
+        <a href="all-products-tab.php">All Products</a>&emsp;|&emsp;
+        <a href="appetizers-tab.php">Appetizers</a>&emsp;|&emsp;
+        <a href="soups-tab.php">Soups</a>&emsp;|&emsp;
+        <a href="entrees-tab.php">Entrees</a>&emsp;|&emsp;
+        <a href="seafood-tab.php">Seafood</a>&emsp;|&emsp;
+        <a href="desserts-tab.php">Desserts</a>&emsp;|&emsp;
+        <a href="drinks-tab.php">Drinks</a>&emsp;|&emsp;
+        <a href="cart-tab.php">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
+                    echo count($_SESSION["shopping_cart"]);
+                } else {
+                    echo '0';
+                } ?></span></a>
+    </p>
+    <div>
 
-                        $total = 0;
+        <div id="appetizers">
+        <?php
 
-                        foreach ($_SESSION['shopping_cart'] as $keys => $values) {
-                            ?>
-                            <tr>
-                                <td><?php echo $values["product_name"]; ?></td>
-                                <td><input type="text" name="quantity[]"
-                                           id="quantity<?php echo $values["product_id"]; ?>"
-                                           value="<?php echo $values["product_quantity"]; ?>"
-                                           data-product_id="<?php echo $values["product_id"]; ?>"
-                                           class="form-control quantity"/></td>
-                                <td align="right">$ <?php echo $values["product_price"]; ?></td>
-                                <td align="right">
-                                    $ <?php echo number_format($values["product_quantity"] * $values["product_price"], 2); ?></td>
-                                <td>
-                                    <button name="delete" class="btn btn-danger btn-xs delete"
-                                            id="<?php echo $values["product_id"]; ?>">Remove
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php
-                            $total = $total + ($values['product_quantity'] * $values['product_price']);
-                        }
-                        ?>
-                        <tr>
-                            <td colspan="3" align="right">Total</td>
-                            <td align="right">$ <?php echo number_format($total, 2); ?></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <!-- Show checkout button only if the shopping cart is not empty -->
-                            <td colspan="5" align="center">
-                                <button id="goToCheckout" class="submit-button">Checkout</button>
-                                <script type="text/javascript">
-                                    document.getElementById("goToCheckout").onclick = function () {
-                                        location.href = "checkout.php";
-                                    };
-                                </script>
-                            </td>
-                        </tr>
-                        <?php
-                    }
+        require 'db.php';
+        $query = "SELECT * FROM PRODUCTS 
+                      WHERE Product_Type = 'Appetizers'
+                      ORDER BY PRODUCT_ID ASC";
+
+        /* Try to query the database */
+        if ($result = $mysqli->query($query)) {
+            // Verify that there are more than 0 rows
+            if ($result->num_rows > 0) {
+                // Fetch and print associated rows
+                while ($row = $result->fetch_assoc()) {
+                    // print_r($product);
                     ?>
-                </table>
-            </div>
-        </div>
+                    <!-- Columns that will display products -->
+                    <div class="col-sm-3 col-md-4">
+                        <!-- Uses post to send the Product ID to the URL -->
+                        <div class="products">
+                            <!-- Prints the Product Name -->
+                            <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
+                            <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
+                            <p class="collapse" id="viewdetails<?php echo $row['Product_Type'];
+                            echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
+                            <p><a class="btn" data-toggle="collapse"
+                                  data-target="#viewdetails<?php echo $row['Product_Type'];
+                                  echo $row['Product_ID']; ?>">View details &raquo;</a></p>
+                            <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
+                            <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
+                                   class="form-control" value="1"/>
+                            <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
+                                   value="<?php echo $row["Product_Name"]; ?>"/>
+                            <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
+                                   value="<?php echo $row["Product_Price"]; ?>"/>
+                            <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
+                                   style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
+                                   value="Add to Cart"/>
+                            <br>
+                        </div>
+                    </div>
+
+                    <?php
+                }
+            }
+        } else {
+            echo "Error getting products from the database: " . $mysqli->error . "<br>";
+        }
+        ?>
     </div>
 </body>
 </html>

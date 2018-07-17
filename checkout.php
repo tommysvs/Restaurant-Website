@@ -13,9 +13,9 @@
     <script>
         $(function () {
             $("#datepicker").datepicker({
-                dateFormat: 'dd/mm/yy',
-                minDate: 0,
-                maxDate: 2
+                dateFormat: 'mm/dd/yy',
+                minDate: 1,
+                maxDate: 3
             });
         });
 
@@ -48,7 +48,7 @@
     <title>Checkout</title>
 </head>
 <body>
-<form action="SubmitOrder.php" method="post">
+<form action="cart.php" method="post">
     <div class="form-group">
 
         <!--  Email Field -->
@@ -108,7 +108,7 @@
 
 
         <!-- Input Button -->
-        <input name="submit1" type="submit" value="Submit"/><br>
+        <input name="place_order" type="submit" value="Place Order"/><br>
         <br>&nbsp;
     </div>
 </form>

@@ -22,127 +22,40 @@ require 'db.php';
 
 </head>
 <body>
+
+<header>
+    <div class="container ">
+        <nav>
+            <span id="home">Nonna's Table</span>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html" style="color: khaki;">About</a></li>
+                <li><a href="all-products-tab.php">Order Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <div class="container" style="width:1000px;">
     <h3 align="center">Orders</h3>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#products">All Products</a></li>
-        <li><a data-toggle="tab" href="#entrees">Entrees</a></li>
-        <li><a data-toggle="tab" href="#cart">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
-                        echo count($_SESSION["shopping_cart"]);
-                    } else {
-                        echo '0';
-                    } ?></span></a></li>
-    </ul>
-    <div class="tab-content">
-        <div id="products" class="tab-pane fade in active">
-            <?php
+    <p>
+        <a href="all-products-tab.php">All Products</a>&emsp;|&emsp;
+        <a href="appetizers-tab.php">Appetizers</a>&emsp;|&emsp;
+        <a href="soups-tab.php">Soups</a>&emsp;|&emsp;
+        <a href="entrees-tab.php">Entrees</a>&emsp;|&emsp;
+        <a href="seafood-tab.php">Seafood</a>&emsp;|&emsp;
+        <a href="desserts-tab.php">Desserts</a>&emsp;|&emsp;
+        <a href="drinks-tab.php">Drinks</a>&emsp;|&emsp;
+        <a href="cart-tab.php">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
+                    echo count($_SESSION["shopping_cart"]);
+                } else {
+                    echo '0';
+                } ?></span></a>
+    </p>
+    <div>
 
-            require 'db.php';
-            $query = 'SELECT * FROM PRODUCTS ORDER BY PRODUCT_ID ASC';
-
-            /* Try to query the database */
-            if ($result = $mysqli->query($query)) {
-                // Verify that there are more than 0 rows
-                if ($result->num_rows > 0) {
-                    // Fetch and print associated rows
-                    while ($row = $result->fetch_assoc()) {
-                        // print_r($product);
-                        ?>
-                        <!-- Columns that will display products -->
-                        <div class="col-sm-3 col-md-4">
-                            <!-- Uses post to send the Product ID to the URL -->
-                            <div class="products">
-                                <!-- Prints the Product Name -->
-                                <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
-                                <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p class="collapse"
-                                   id="viewdetails<?php echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
-                                <p><a class="btn" data-toggle="collapse"
-                                      data-target="#viewdetails<?php echo $row['Product_ID']; ?>">View details
-                                        &raquo;</a></p>
-                                <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
-                                <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
-                                       class="form-control" value="1"/>
-                                <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Name"]; ?>"/>
-                                <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Price"]; ?>"/>
-                                <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
-                                       style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
-                                       value="Add to Cart"/>
-                                <br>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-            } else {
-                echo "Error getting products from the database: " . $mysqli->error . "<br>";
-            }
-            ?>
-        </div>
-        <!-------------------------------------------
-
-         Entrees Tab
-
-        --------------------------------------------->
-        <div id="entrees" class="tab-pane fade">
-            <?php
-
-            require 'db.php';
-            $query = "SELECT * FROM PRODUCTS 
-                      WHERE Product_Type = 'Entree'
-                      ORDER BY PRODUCT_ID ASC";
-
-            /* Try to query the database */
-            if ($result = $mysqli->query($query)) {
-                // Verify that there are more than 0 rows
-                if ($result->num_rows > 0) {
-                    // Fetch and print associated rows
-                    while ($row = $result->fetch_assoc()) {
-                        // print_r($product);
-                        ?>
-                        <!-- Columns that will display products -->
-                        <div class="col-sm-3 col-md-4">
-                            <!-- Uses post to send the Product ID to the URL -->
-                            <div class="products">
-                                <!-- Prints the Product Name -->
-                                <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
-                                <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p class="collapse" id="viewdetails<?php echo $row['Product_Type'];
-                                echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
-                                <p><a class="btn" data-toggle="collapse"
-                                      data-target="#viewdetails<?php echo $row['Product_Type'];
-                                      echo $row['Product_ID']; ?>">View details &raquo;</a></p>
-                                <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
-                                <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
-                                       class="form-control" value="1"/>
-                                <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Name"]; ?>"/>
-                                <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Price"]; ?>"/>
-                                <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
-                                       style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
-                                       value="Add to Cart"/>
-                                <br>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-            } else {
-                echo "Error getting products from the database: " . $mysqli->error . "<br>";
-            }
-            ?>
-        </div>
-        <!-------------------------------------------
-
-        Cart Tab
-
-        --------------------------------------------->
-        <div id="cart" class="tab-pane fade">
+        <div id="cart">
             <div class="table-responsive" id="order_table">
                 <table class="table table-bordered">
                     <tr>
@@ -180,6 +93,7 @@ require 'db.php';
                             </tr>
                             <?php
                             $total = $total + ($values['product_quantity'] * $values['product_price']);
+                            $_SESSION['total_price'] = $total;
                         }
                         ?>
                         <tr>
@@ -276,5 +190,3 @@ require 'db.php';
         });
     });
 </script>
-
-
