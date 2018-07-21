@@ -53,47 +53,47 @@
 
         <!--  Email Field -->
         <label for="email"><i class="fa fa-envelope"></i>Email</label>
-        <input type="text" id="email" name="email" placeholder="john@email.com">
+        <input type="email" id="email" name="email" placeholder="e.g., john@email.com">
         <br>
 
         <!--  First Name Field -->
         <label for="firstName"><i class="fa fa-envelope"></i>First Name</label>
-        <input type="text" id="firstName" name="firstName" placeholder="John">
+        <input type="text" id="firstName" name="firstName" placeholder="e.g., John">
         <br>
 
         <!--  Last Name Field -->
         <label for="lastName"><i class="fa fa-envelope"></i>Last Name</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Doe">
+        <input type="text" id="lastName" name="lastName" placeholder="e.g., Doe">
         <br>
 
         <!-- Address Field -->
         <label for="address"><i class="fa fa-envelope"></i>Address</label>
-        <input type="text" id="address" name="address" placeholder="123 Street Dr">
+        <input type="text" id="address" name="address" placeholder="e.g., 123 Street Dr">
         <br>
 
         <!-- City Field -->
         <label for="city"><i class="fa fa-envelope"></i>City</label>
-        <input type="text" id="city" name="city" placeholder="My city">
+        <input type="text" id="city" name="city" placeholder="e.g., Orlando">
         <br>
 
         <!-- State Or Region Field -->
         <label for="region"><i class="fa fa-envelope"></i>State Or Region</label>
-        <input id="region" name="region" placeholder="My region">
+        <input id="region" name="region" placeholder="e.g., Florida">
         <br>
 
         <!-- Country Field -->
         <label for="region"><i class="fa fa-envelope"></i>Country</label>
-        <input id="country" name="country" placeholder="My country">
+        <input id="country" name="country" placeholder="e.g., United States">
         <br>
 
         <!-- Postal Code Field -->
-        <label for="postalCode"><i class="fa fa-envelope"></i>Postal Code</label>
-        <input type="text" id="postalCode" name="postalCode" placeholder="00000">
+        <label for="postalCode"><i class="fa fa-envelope"></i>Postal Code (Input U.S. postal code only)</label>
+        <input type="tel" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="e.g., 00000">
         <br>
 
         <!-- Phone Number Field -->
-        <label for="phoneNumber"><i class="fa fa-envelope"></i>Phone Number</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="4078485236">
+        <label for="phoneNumber"><i class="fa fa-envelope"></i>Phone Number (Only input numbers)</label>
+        <input type="text" pattern="[0-9]{10}" id="phoneNumber" name="phoneNumber" placeholder="e.g., 4078485236">
         <br>
 
         <!-- Date Picker Field -->
