@@ -5,106 +5,143 @@ require 'db.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shopping Cart</title>
+    <title>Menu - Nonna's Table</title>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/font_styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
-    <link rel="stylesheet" href="cart.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
-<header>
-    <div class="container ">
-        <nav>
-            <span id="home">Nonna's Table</span>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html" style="color: khaki;">About</a></li>
-                <li><a href="all-products-tab.php">Order Now</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<div class="container" style="width:1000px;">
-    <h3 align="center">Orders</h3>
-    <p>
-        <a href="all-products-tab.php">All Products</a>&emsp;|&emsp;
-        <a href="appetizers-tab.php">Appetizers</a>&emsp;|&emsp;
-        <a href="soups-tab.php">Soups</a>&emsp;|&emsp;
-        <a href="entrees-tab.php">Entrees</a>&emsp;|&emsp;
-        <a href="seafood-tab.php">Seafood</a>&emsp;|&emsp;
-        <a href="desserts-tab.php">Desserts</a>&emsp;|&emsp;
-        <a href="drinks-tab.php">Drinks</a>&emsp;|&emsp;
-        <a href="cart-tab.php">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
-                    echo count($_SESSION["shopping_cart"]);
-                } else {
-                    echo '0';
-                } ?></span></a>
-    </p>
-    <div>
-
-        <div id="all-products">
-            <?php
-
-            require 'db.php';
-            $query = 'SELECT * FROM PRODUCTS ORDER BY PRODUCT_ID ASC';
-
-            /* Try to query the database */
-            if ($result = $mysqli->query($query)) {
-                // Verify that there are more than 0 rows
-                if ($result->num_rows > 0) {
-                    // Fetch and print associated rows
-                    while ($row = $result->fetch_assoc()) {
-                        // print_r($product);
-                        ?>
-                        <!-- Columns that will display products -->
-                        <div class="col-sm-3 col-md-4">
-                            <!-- Uses post to send the Product ID to the URL -->
-                            <div class="products">
-                                <!-- Prints the Product Name -->
-                                <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
-                                <h4 class="text-info"><?php echo $row['Product_Name']; ?></h4>
-                                <p class="collapse" id="viewdetails<?php echo $row['Product_Type'];
-                                echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
-                                <p><a class="btn" data-toggle="collapse"
-                                      data-target="#viewdetails<?php echo $row['Product_Type'];
-                                      echo $row['Product_ID']; ?>">View details &raquo;</a></p>
-                                <h4 class="text-danger">$ <?php echo $row['Product_Price']; ?></h4>
-                                <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
-                                       class="form-control" value="1"/>
-                                <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Name"]; ?>"/>
-                                <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"
-                                       value="<?php echo $row["Product_Price"]; ?>"/>
-                                <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>"
-                                       style="margin-top:5px;" class="btn btn-info form-control add_to_cart"
-                                       value="Add to Cart"/>
-                                <br>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-            } else {
-                echo "Error getting products from the database: " . $mysqli->error . "<br>";
-            }
-            ?>
+    <header>
+        <div class="container">
+            <nav>
+                <span id="home">Nonna's Table</span>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="all-products-tab.php" style="color: khaki;">Order Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <div class="sec1-menu">
+        <h1 class="sec-animate">
+            <span class="subtitle">Italian cuisine</span>
+            <span class="title">Discover the Menu</span>
+        </h1> 
+    </div>
+    
+    <div class="sec2-menu">
+        <span class="title2">Welcome to Nonna's Table</span>
+        <hr class="one">
+        
+        <div class="container-Menu">        
+            <div class="container-Tabs">
+                <a class="tabs" href="all-products-tab.php" style="background-color: khaki;">All Products</a>
+                <a class="tabs" href="appetizers-tab.php">Appetizers</a>
+                <a class="tabs" href="soups-tab.php">Soups</a>
+                <a class="tabs" href="entrees-tab.php">Entrees</a>
+                <a class="tabs" href="seafood-tab.php">Seafood</a>
+                <a class="tabs" href="desserts-tab.php">Desserts</a>
+                <a class="tabs" href="drinks-tab.php">Drinks</a>
+                <a class="tabs" href="cart-tab.php">Cart <span class="badge">
+                    <?php if (isset($_SESSION["shopping_cart"])) {
+                            echo count($_SESSION["shopping_cart"]);
+                        } else {
+                            echo '0';
+                        } ?></span>
+                </a>
+            </div>
+
+            <div id="all-products" class="container-Products">
+                <?php
+                require 'db.php';
+                $query = 'SELECT * FROM PRODUCTS ORDER BY PRODUCT_ID ASC';
+
+                /* Try to query the database */
+                if ($result = $mysqli->query($query)) {
+                    // Verify that there are more than 0 rows
+                    if ($result->num_rows > 0) {
+                        // Fetch and print associated rows
+                        while ($row = $result->fetch_assoc()) {
+                            // print_r($product);
+                            ?>
+                            <div class="grid-menu">
+                                <div class="grid-items">
+                                    <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="260"/><br>
+                                    
+                                    <h4 class="food-title"><?php echo $row['Product_Name']; ?></h4>
+                                    
+                                    <p class="food-desc" id="viewdetails<?php echo $row['Product_Type']; echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
+                                    
+                                    <input type="button" class="viewDet" onclick="grow()" value="View details &raquo;" data-target="#viewdetails
+                                            <?php echo $row['Product_Type']; echo $row['Product_ID']; ?>">
+                                    
+                                    <h4 class="price">$ <?php echo $row['Product_Price']; ?></h4>
+                                    
+                                    <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"class="textProduct form-control" value="1"/>
+                                    
+                                    <input type="hidden" name="hidden_name" id="name<?php echo $row["Product_ID"]; ?>"value="<?php echo $row["Product_Name"]; ?>"/>
+                                    
+                                    <input type="hidden" name="hidden_price" id="price<?php echo $row["Product_ID"]; ?>"value="<?php echo $row["Product_Price"]; ?>"/>
+                                    
+                                    <input type="button" name="add_to_cart" id="<?php echo $row["Product_ID"]; ?>" class="buttonProduct form-control add_to_cart" value="Add to Cart"/>
+                                    <br>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                } else {
+                    echo "Error getting products from the database: " . $mysqli->error . "<br>";
+                }
+                ?>
+            </div>
+        </div>
+    </div>   
+        
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+    <footer>
+        <div class="line"></div>
+        <div class="info-container">
+            <span class="logo">Nonna's Table</span>
+            <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
+            
+            <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
+            <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
+            <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
+            <span class="info-footer">SAT - SUN: 11:00 A.M. - 11:00 P.M.</span>
+            <span class="title-footer">Phone: <span style="color: rgba(255, 255, 255, 0.45);">+1 (407) 563 7883</span></span>
+            <form class="newsletter">
+                <input type="text" class="newsletter-box" placeholder="Subscribe to our newsletter">
+                <input type="submit" value="SUBMIT" class="newsletter-button">
+            </form>
+        </div>
+        
+        <div class="line" style="margin-top: 30px;"></div>
+        
+        <div class="copy-container">
+            <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
+        </div>
+    </footer>
 </body>
 </html>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>    
+<script src="js/functions.js"></script>
+    
+<!-- Menu functions -->
 <script>
     $(document).ready(function (data) {
         $('.add_to_cart').click(function () {
@@ -128,12 +165,12 @@ require 'db.php';
                     success: function (data) {
                         $('#order_table').html(data.order_table);
                         $('.badge').text(data.cart_item);
-                        alert("Product has been Added into Cart");
+                        alert("Product has been added into Cart.");
                     }
                 });
             }
             else {
-                alert("Please Enter Number of Quantity")
+                alert("Please enter number of quantity.")
             }
         });
         $(document).on('click', '.delete', function () {
