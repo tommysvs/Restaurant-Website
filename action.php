@@ -61,6 +61,8 @@ if (isset($_POST["product_id"])) {
            ';
     if (!empty($_SESSION["shopping_cart"])) {
         $total = 0;
+        $subtotal = 0;
+        $tax = 0;
         foreach ($_SESSION["shopping_cart"] as $keys => $values) {
             $order_table .= '  
                      <tr>  
@@ -71,14 +73,16 @@ if (isset($_POST["product_id"])) {
                           <td><button name="delete" class="btn btn-danger btn-xs delete" id="' . $values["product_id"] . '">Remove</button></td>  
                      </tr>  
                 ';
-            $total = $total + ($values["product_quantity"] * $values["product_price"]);
+            $subtotal = $subtotal + ($values['product_quantity'] * $values['product_price']);
+            $tax = $tax + (($values['product_quantity'] * $values['product_price']) * 0.075);
+            $total = $subtotal + $tax;
             $_SESSION['total_price'] = $total;
         }
         $order_table .= '  
                 <tr>  
-                     <td colspan="3" align="right">Total</td>  
-                     <td align="right">$ ' . number_format($total, 2) . '</td>  
-                     <td></td>  
+                            <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br></br>Total</td>
+                            <td align="right">$ ' . number_format($subtotal, 2) . '<br></br>$  ' . number_format($tax, 2) . '<br></br>$   ' . number_format($total, 2) . '</td>
+                            <td></td>
                 </tr>  
                 <tr>  
                      <td colspan="5" align="center">  

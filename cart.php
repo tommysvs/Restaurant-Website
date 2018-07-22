@@ -100,6 +100,8 @@ $date = date("Y-m-d H:i:s", strtotime($date));
         $customer_details = '';
         $order_details = '';
         $total = 0;
+        $subtotal = 0;
+        $tax = 0;
         $query = '  
                      SELECT * FROM orders  
                      INNER JOIN customers  
@@ -133,7 +135,9 @@ $date = date("Y-m-d H:i:s", strtotime($date));
                                     <td>" . number_format($row["Order_Product_Quantity"] * $row["Product_Price"], 2) . "</td>  
                                </tr>  
                           ";
-            $total = $total + ($row["Order_Product_Quantity"] * $row["Product_Price"]);
+            $subtotal = $subtotal + ($row["Order_Product_Quantity"] * $row["Product_Price"]);
+            $tax = $tax + (($row["Order_Product_Quantity"] * $row["Product_Price"]) * 0.075);
+            $total = $subtotal + $tax;
         }
         echo '  
                      <h3 align="center">Order Summary for Order No.' . $_SESSION["order_id"] . '</h3>  
@@ -159,31 +163,24 @@ $date = date("Y-m-d H:i:s", strtotime($date));
                                               </tr>  
                                               ' . $order_details . '  
                                               <tr>  
-                                                   <td colspan="3" align="right"><label>Total</label></td>  
-                                                   <td>' . number_format($total, 2) . '</td>  
+                                              <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br></br>Total</td>
+                                              <td align="right">$ ' . number_format($subtotal, 2) . '<br></br>$  ' . number_format($tax, 2) . '<br></br>$   ' . number_format($total, 2) . '</td>
                                               </tr>  
                                          </table>  
-                                                                         
-                                
-                                       <input type="button" 
-                                       style="margin-top:5px;" id= "print" class="btn btn-info print"
-                                       value="Print"/>
-                                <script type="text/javascript">
-                                    document.getElementById("print").onclick = function () {
-                                        
-                                        window.print();
-                                    };
-                                </script>
                                          
-                                       <input type="button" 
-                                       style="margin-top:5px;" id= "makeAnotherOrder" class="btn btn-info make-new-order"
-                                       value="Make another order"/>
-                                <script type="text/javascript">
-                                    document.getElementById("makeAnotherOrder").onclick = function () {
-                                        location.href = "all-products-tab.php";
-                                    };
-                                </script>
-
+                                         <input type="button" style="margin-top:5px;" id= "print" class="btn btn-info print" value="Print"/>
+                                         <script type="text/javascript">
+                                         document.getElementById("print").onclick = function () {
+                                             window.print();
+                                         };
+                                         </script>
+                                         
+                                         <input type="button" style="margin-top:5px;" id= "makeAnotherOrder" class="btn btn-info make-new-order" value="Make another order"/>
+                                         <script type="text/javascript">
+                                         document.getElementById("makeAnotherOrder").onclick = function () {
+                                             location.href = "all-products-tab.php";
+                                         };
+                                         </script>
                                     </td>  
                                </tr>  
                           </table>  

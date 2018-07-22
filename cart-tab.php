@@ -59,9 +59,6 @@ require 'db.php';
             <div class="table-responsive" id="order_table">
                 <table class="table table-bordered">
                     <tr>
-                        <th colspan="5"><h3>Order Details</h3></th>
-                    </tr>
-                    <tr>
                         <th width="40%">Product Name</th>
                         <th width="10%">Quantity</th>
                         <th width="20%">Price</th>
@@ -72,7 +69,8 @@ require 'db.php';
                     if (!empty($_SESSION['shopping_cart'])) {
 
                         $total = 0;
-
+                        $subtotal = 0;
+                        $tax = 0;
                         foreach ($_SESSION['shopping_cart'] as $keys => $values) {
                             ?>
                             <tr>
@@ -92,13 +90,17 @@ require 'db.php';
                                 </td>
                             </tr>
                             <?php
-                            $total = $total + ($values['product_quantity'] * $values['product_price']);
+                            $subtotal = $subtotal + ($values['product_quantity'] * $values['product_price']);
+                            $tax = $tax + (($values['product_quantity'] * $values['product_price']) * 0.075);
+                            $total = $subtotal + $tax;
                             $_SESSION['total_price'] = $total;
                         }
                         ?>
                         <tr>
-                            <td colspan="3" align="right">Total</td>
-                            <td align="right">$ <?php echo number_format($total, 2); ?></td>
+                            <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br></br>Total</td>
+                            <td align="right">$ <?php echo number_format($subtotal, 2); ?>
+                                <br></br>$ <?php echo number_format($tax, 2); ?>
+                                <br></br>$ <?php echo number_format($total, 2); ?></td>
                             <td></td>
                         </tr>
                         <tr>
