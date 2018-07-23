@@ -115,6 +115,8 @@ require 'db.php';
                             </td>
                         </tr>
                         <?php
+                    } else {
+                        echo ("<h2 style=\"color:black;\">Cart is empty</h2>");
                     }
                     ?>
                 </table>

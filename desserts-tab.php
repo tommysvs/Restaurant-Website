@@ -19,41 +19,41 @@ require 'db.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="fixNav">
-                <span id="home" class="fixSpan">Nonna's Table</span>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="all-products-tab.php" style="color: khaki;">Order Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <div class="sec1-menu">
-        <span class="title2">Discover the menu</span>
-        <hr class="one">
-        
-        <div class="container-Menu">        
-            <div class="container-Tabs">
-                <a class="tabs" href="all-products-tab.php">All Products</a>
-                <a class="tabs" href="appetizers-tab.php">Appetizers</a>
-                <a class="tabs" href="soups-tab.php">Soups</a>
-                <a class="tabs" href="entrees-tab.php">Entrees</a>
-                <a class="tabs" href="seafood-tab.php">Seafood</a>
-                <a class="tabs" href="desserts-tab.php"  style="background-color: khaki;">Desserts</a>
-                <a class="tabs" href="drinks-tab.php">Drinks</a>
-                <a class="tabs" href="cart-tab.php">Cart <span class="badge">
+<header>
+    <div class="container">
+        <nav class="fixNav">
+            <span id="home" class="fixSpan">Nonna's Table</span>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="all-products-tab.php" style="color: khaki;">Order Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="sec1-menu">
+    <span class="title2">Discover the menu</span>
+    <hr class="one">
+
+    <div class="container-Menu">
+        <div class="container-Tabs">
+            <a class="tabs" href="all-products-tab.php">All Products</a>
+            <a class="tabs" href="appetizers-tab.php">Appetizers</a>
+            <a class="tabs" href="soups-tab.php">Soups</a>
+            <a class="tabs" href="entrees-tab.php">Entrees</a>
+            <a class="tabs" href="seafood-tab.php">Seafood</a>
+            <a class="tabs" href="desserts-tab.php" style="background-color: khaki;">Desserts</a>
+            <a class="tabs" href="drinks-tab.php">Drinks</a>
+            <a class="tabs" href="cart-tab.php">Cart <span class="badge">
                     <?php if (isset($_SESSION["shopping_cart"])) {
-                            echo count($_SESSION["shopping_cart"]);
-                        } else {
-                            echo '0';
-                        } ?></span>
-                </a>
-            </div>
+                        echo count($_SESSION["shopping_cart"]);
+                    } else {
+                        echo '0';
+                    } ?></span>
+            </a>
+        </div>
 
         <div id="desserts" class="container-Products">
             <?php
@@ -76,11 +76,11 @@ require 'db.php';
                                 <!-- Prints the Product Name -->
                                 <img src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
                                 <h4 class="food-title"><?php echo $row['Product_Name']; ?></h4>
-                                <p class="food-desc" id="viewdetails<?php echo $row['Product_Type'];
-                                echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
-                                <p><a class="viewDet" data-toggle="collapse"
-                                      data-target="#viewdetails<?php echo $row['Product_Type'];
-                                      echo $row['Product_ID']; ?>">View details &raquo;</a></p>
+                                <button class="accordion">View details &raquo;</button>
+                                <div class="panel">
+                                    <p class="food-desc" id="viewdetails<?php echo $row['Product_Type'];
+                                    echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
+                                </div>
                                 <h4 class="price">$ <?php echo $row['Product_Price']; ?></h4>
                                 <input type="text" name="quantity" id="quantity<?php echo $row["Product_ID"]; ?>"
                                        class="textProduct form-control" value="1"/>
@@ -95,46 +95,50 @@ require 'db.php';
                             </div>
                         </div>
                         <?php
-                        }
                     }
-                } else {
-                    echo "Error getting products from the database: " . $mysqli->error . "<br>";
                 }
-                ?>
-            </div>
+            } else {
+                echo "Error getting products from the database: " . $mysqli->error . "<br>";
+            }
+            ?>
         </div>
-    </div>   
-        
-    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
-    
-    <footer>
-        <div class="line"></div>
-        <div class="info-container">
-            <span class="logo">Nonna's Table</span>
-            <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
-            
-            <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
-            <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
-            <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
-            <span class="info-footer">SAT - SUN: 11:00 A.M. - 11:00 P.M.</span>
-            <span class="title-footer">Phone: <span style="color: rgba(255, 255, 255, 0.45);">+1 (407) 563 7883</span></span>
-            <form class="newsletter">
-                <input type="text" class="newsletter-box" placeholder="Subscribe to our newsletter">
-                <input type="submit" value="SUBMIT" class="newsletter-button">
-            </form>
-        </div>
-        
-        <div class="line" style="margin-top: 30px;"></div>
-        
-        <div class="copy-container">
-            <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
-        </div>
-    </footer>
+    </div>
+</div>
+
+<a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<footer>
+    <div class="line"></div>
+    <div class="info-container">
+        <span class="logo">Nonna's Table</span>
+        <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
+
+        <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
+        <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
+        <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
+        <span class="info-footer">SAT - SUN: 11:00 A.M. - 11:00 P.M.</span>
+        <span class="title-footer">Phone: <span
+                    style="color: rgba(255, 255, 255, 0.45);">+1 (407) 563 7883</span></span>
+        <form class="newsletter">
+            <input type="text" class="newsletter-box" placeholder="Subscribe to our newsletter">
+            <input type="submit" value="SUBMIT" class="newsletter-button">
+        </form>
+    </div>
+
+    <div class="line" style="margin-top: 30px;"></div>
+
+    <div class="copy-container">
+        <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
+    </div>
+</footer>
 </body>
 </html>
 
+<!-- Javascript -->
+<script src="js/view_details.js"></script>
+
 <!-- jQuery -->
-<script src="js/jquery.js"></script>    
+<script src="js/jquery.js"></script>
 <script src="js/functions.js"></script>
 
 <script>
