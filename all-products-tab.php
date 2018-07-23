@@ -21,8 +21,8 @@ require 'db.php';
 <body>
     <header>
         <div class="container">
-            <nav>
-                <span id="home">Nonna's Table</span>
+            <nav class="fixNav">
+                <span id="home" class="fixSpan">Nonna's Table</span>
                 <ul>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -32,16 +32,9 @@ require 'db.php';
             </nav>
         </div>
     </header>
-
-    <div class="sec1-menu">
-        <h1 class="sec-animate">
-            <span class="subtitle">Italian cuisine</span>
-            <span class="title">Discover the Menu</span>
-        </h1> 
-    </div>
     
-    <div class="sec2-menu">
-        <span class="title2">Welcome to Nonna's Table</span>
+    <div class="sec1-menu">
+        <span class="title2">Discover the menu</span>
         <hr class="one">
         
         <div class="container-Menu">        

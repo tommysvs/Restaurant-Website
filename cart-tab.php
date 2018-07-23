@@ -5,59 +5,59 @@ require 'db.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shopping Cart</title>
+    <title>Menu - Nonna's Table</title>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/font_styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
-    <link rel="stylesheet" href="cart.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <nav class="fixNav">
+                <span id="home" class="fixSpan">Nonna's Table</span>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="all-products-tab.php" style="color: khaki;">Order Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <div class="container ">
-        <nav>
-            <span id="home">Nonna's Table</span>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html" style="color: khaki;">About</a></li>
-                <li><a href="all-products-tab.php">Order Now</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<div class="sec1-menu">
+        <span class="title2">Let's take a look!</span>
+        <hr class="one">
+        
+        <div class="container-Menu">        
+            <div class="container-Tabs">
+                <a class="tabs" href="all-products-tab.php">All Products</a>
+                <a class="tabs" href="appetizers-tab.php">Appetizers</a>
+                <a class="tabs" href="soups-tab.php">Soups</a>
+                <a class="tabs" href="entrees-tab.php">Entrees</a>
+                <a class="tabs" href="seafood-tab.php">Seafood</a>
+                <a class="tabs" href="desserts-tab.php">Desserts</a>
+                <a class="tabs" href="drinks-tab.php">Drinks</a>
+                <a class="tabs" href="cart-tab.php" style="background-color: khaki;">Cart <span class="badge">
+                    <?php if (isset($_SESSION["shopping_cart"])) {
+                            echo count($_SESSION["shopping_cart"]);
+                        } else {
+                            echo '0';
+                        } ?></span>
+                </a>
+            </div>
 
-<div class="container" style="width:1000px;">
-    <h3 align="center">Orders</h3>
-    <p>
-        <a href="all-products-tab.php">All Products</a>&emsp;|&emsp;
-        <a href="appetizers-tab.php">Appetizers</a>&emsp;|&emsp;
-        <a href="soups-tab.php">Soups</a>&emsp;|&emsp;
-        <a href="entrees-tab.php">Entrees</a>&emsp;|&emsp;
-        <a href="seafood-tab.php">Seafood</a>&emsp;|&emsp;
-        <a href="desserts-tab.php">Desserts</a>&emsp;|&emsp;
-        <a href="drinks-tab.php">Drinks</a>&emsp;|&emsp;
-        <a href="cart-tab.php">Cart <span class="badge"><?php if (isset($_SESSION["shopping_cart"])) {
-                    echo count($_SESSION["shopping_cart"]);
-                } else {
-                    echo '0';
-                } ?></span></a>
-    </p>
-    <div>
-
-        <div id="cart">
+        <div id="cart" class="container-Products">
             <div class="table-responsive" id="order_table">
-                <table class="table table-bordered">
+                <table>
                     <tr>
                         <th width="40%">Product Name</th>
                         <th width="10%">Quantity</th>
@@ -79,12 +79,12 @@ require 'db.php';
                                            id="quantity<?php echo $values["product_id"]; ?>"
                                            value="<?php echo $values["product_quantity"]; ?>"
                                            data-product_id="<?php echo $values["product_id"]; ?>"
-                                           class="form-control quantity"/></td>
+                                           class="textQuantity quantity"/></td>
                                 <td align="right">$ <?php echo $values["product_price"]; ?></td>
                                 <td align="right">
                                     $ <?php echo number_format($values["product_quantity"] * $values["product_price"], 2); ?></td>
                                 <td>
-                                    <button name="delete" class="btn btn-danger btn-xs delete"
+                                    <button name="delete" class="deleteButton delete"
                                             id="<?php echo $values["product_id"]; ?>">Remove
                                     </button>
                                 </td>
@@ -97,16 +97,16 @@ require 'db.php';
                         }
                         ?>
                         <tr>
-                            <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br></br>Total</td>
+                            <td colspan="3" align="right">Subtotal<br><br>Tax (7.5%)<br><br>Total</td>
                             <td align="right">$ <?php echo number_format($subtotal, 2); ?>
-                                <br></br>$ <?php echo number_format($tax, 2); ?>
-                                <br></br>$ <?php echo number_format($total, 2); ?></td>
+                                <br><br>$ <?php echo number_format($tax, 2); ?>
+                                <br><br>$ <?php echo number_format($total, 2); ?></td>
                             <td></td>
                         </tr>
                         <tr>
                             <!-- Show checkout button only if the shopping cart is not empty -->
                             <td colspan="5" align="center">
-                                <button id="goToCheckout" class="submit-button">Checkout</button>
+                                <button id="goToCheckout" class="submitButton submit-button">Checkout</button>
                                 <script type="text/javascript">
                                     document.getElementById("goToCheckout").onclick = function () {
                                         location.href = "checkout.php";
@@ -122,8 +122,41 @@ require 'db.php';
         </div>
     </div>
 </div>
+
+    <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+    <footer>
+        <div class="line"></div>
+        <div class="info-container">
+            <span class="logo">Nonna's Table</span>
+            <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
+            
+            <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
+            <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
+            <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
+            <span class="info-footer">SAT - SUN: 11:00 A.M. - 11:00 P.M.</span>
+            <span class="title-footer">Phone: <span style="color: rgba(255, 255, 255, 0.45);">+1 (407) 563 7883</span></span>
+            <form class="newsletter">
+                <input type="text" class="newsletter-box" placeholder="Subscribe to our newsletter">
+                <input type="submit" value="SUBMIT" class="newsletter-button">
+            </form>
+        </div>
+        
+        <div class="line" style="margin-top: 30px;"></div>
+        
+        <div class="copy-container">
+            <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
+        </div>
+    </footer>
 </body>
 </html>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>    
+<script src="js/functions.js"></script>
+</body>
+</html>
+
 <script>
     $(document).ready(function (data) {
         $('.add_to_cart').click(function () {

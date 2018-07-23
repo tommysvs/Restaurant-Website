@@ -210,3 +210,6 @@ setInterval(function() {
 },  10000);
 
 /*** REDIRECT LOGO ***/
+document.getElementById("home").onclick = function () {
+    location.href = "home.html";
+};

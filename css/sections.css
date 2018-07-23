@@ -222,18 +222,11 @@
 
 /*** MENU ***/
 .sec1-menu {
-    height: 80%;
-    padding-top: 15%;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/bg17.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.sec2-menu{
-    height: 7000px;    
+    height: auto;    
     background-color: white;
     padding: 80px;
+    overflow: auto;
+    padding-top: 150px;
 }
 
 .container-Menu {
@@ -252,7 +245,7 @@ a.tabs {
     color: black;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
@@ -306,6 +299,7 @@ a.tabs:hover {
     width: 260px;
     margin: 10px;
     color: black;
+    border-radius: 5px;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -333,6 +327,7 @@ a.tabs:hover {
     font-family: 'Montserrat', sans-serif;
     margin-top: 10px;
     color: white;
+    border-radius: 1px;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -341,7 +336,7 @@ a.tabs:hover {
 }
 
 .buttonProduct:hover {
-    background-color: darksalmon;
+    background-color: #d75849;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -355,6 +350,7 @@ a.tabs:hover {
     text-align: center;
     outline-color: #aaa;
     border: 1px solid #ccc;
+    border-radius: 1px;
 }
 
 .viewDet {
@@ -366,6 +362,75 @@ a.tabs:hover {
     color: black;
     outline: none;
     cursor: pointer;
+}
+
+/*** CART ***/
+table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    border-radius: 5px;
+    color: black;
+    padding: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+}
+
+th {
+    text-align: left;
+}
+
+.textQuantity {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    outline-color: #aaa;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.deleteButton {
+    width: 100%;
+    height: 35px;
+    background-color: salmon;
+    cursor: pointer;
+    border: none;
+    outline-color: #aaa;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border-radius: 3px;
+}
+
+.deleteButton:hover {
+    background-color: #d75849;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.submitButton {
+    width: 120px;
+    height: 35px;
+    background-color: #161d27;
+    cursor: pointer;
+    border: none;
+    outline-color: #aaa;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border-radius: 3px;
+}
+
+.submitButton:hover {
+    background-color: khaki;
+    color: black;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 /*** CONTACT ***/
@@ -437,7 +502,7 @@ textarea {
     font-family: 'Montserrat', sans-serif;
 }
 
-.yname:focus, .yemail:focus, textarea:focus, .textProduct:focus {
+.yname:focus, .yemail:focus, textarea:focus, .textProduct:focus, .textQuantity:focus {
     background-color: rgba(0, 0, 0, 0.01);
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
@@ -466,13 +531,13 @@ textarea {
 }
 
 .buttonContact:hover {
-    background-color: darkkhaki;
+    background-color: khaki;
+    color: black;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    color: black;
 }
 
 .sec3-contact {

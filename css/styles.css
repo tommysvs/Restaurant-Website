@@ -126,6 +126,29 @@ nav.shrink > span {
     cursor: pointer;
 }
 
+/* For menu (navbar) purposes */
+nav.fixNav {
+    background-color: rgba(11, 14, 19, 0.9);
+    height: 75px;
+    padding-top: 0px;
+    transition: all ease .5s;
+}
+
+nav.fixNav > ul {
+    padding-top: 30px;
+    transition: all ease .5s;
+    padding-right: 20%;
+    font-size: 0.9em;
+}
+
+nav.fixNav > span {
+    visibility: visible;
+    padding-top: 5px;
+    margin-left: 20%;
+    transition: all ease .5s;
+    cursor: pointer;
+}
+
 /*** ANIMATIONS ***/
 .sec-animate {
     position: relative;
