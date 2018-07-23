@@ -1,6 +1,5 @@
 <?php
 /*File to connect to the database*/
-
 $host="127.0.0.1";
 $port=3307;
 $socket="";

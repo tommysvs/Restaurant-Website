@@ -168,7 +168,7 @@ h8.reviews-title {
 }
 
 /*** MENU ***/
-h4.food-title {
+h3.food-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     text-transform: uppercase;
@@ -186,10 +186,20 @@ p.food-desc {
     cursor: text;
 }
 
-h4.price {
+h3.tPrice {
     text-align: center;
     color: darkkhaki;
     font-size: 1.1em;
+}
+
+
+.cartEmpty {
+    font-size: 1em;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
 }
 
 /*** CONTACT ***/
@@ -212,4 +222,20 @@ hr.one {
 
 .n {
     color: darkkhaki;
+}
+
+/*** CHECKOUT ***/
+label {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+}
+
+.orderS {
+    text-align: center;
+    font-size: 1em;
+    color: black;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-top: 30px;
 }

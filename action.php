@@ -37,7 +37,7 @@ if (isset($_POST["product_id"])) {
         foreach ($_SESSION["shopping_cart"] as $keys => $values) {
             if ($values["product_id"] == $_POST["product_id"]) {
                 unset($_SESSION["shopping_cart"][$keys]);
-                $message = '<label class="text-success">Product Removed</label>';
+                $message = '<h2 class="cartEmpty"><strong>Product removed</strong></h2>';
             }
         }
     }
@@ -102,4 +102,6 @@ if (isset($_POST["product_id"])) {
         'cart_item' => count($_SESSION["shopping_cart"])
     );
     echo json_encode($output);
+} else {
+    echo ("<h2 class=\"cartEmpty\">Cart is empty</h2>");
 }

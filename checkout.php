@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Menu - Nonna's Table</title>
+    <title>Checkout - Nonna's Table</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/font_styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -17,9 +16,9 @@
     <script>
         $(function () {
             $("#datepicker").datepicker({
-                dateFormat: 'mm/dd/yy',
-                minDate: 1,
-                maxDate: 3
+                dateFormat: 'dd/mm/yy',
+                minDate: 0,
+                maxDate: 2
             });
         });
 
@@ -48,8 +47,6 @@
             return true;  // valid
         }
     </script>
-
-    <title>Checkout</title>
 </head>
 <body>
     <header>
@@ -66,74 +63,84 @@
         </div>
     </header>
     
-    <div class="sec1-checkout">
-        <span class="title2">Checkout</span>
-        <hr class="one">
-        
-        <form action="cart.php" method="post">
-            <div class="form-group">
+    <div class="sec-MCR">
+        <div class="sec-animate">
+            <span class="title2">Checkout</span>
+            <hr class="one">
 
-                <!--  Email Field -->
-                <label for="email"><i class="fa fa-envelope"></i>Email</label>
-                <input type="email" id="email" name="email" placeholder="e.g., john@email.com">
-                <br>
+            <form action="cart.php" method="post">
+                <div class="container-Fields form-group">
+                    <!--  First Name Field -->
+                    <div style="display: inline-block;">
+                        <label for="firstName">First Name</label><br>
+                        <input class="checkout-Input" type="text" id="firstName" name="firstName" placeholder="e.g., John">
+                    </div>
 
-                <!--  First Name Field -->
-                <label for="firstName"><i class="fa fa-envelope"></i>First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="e.g., John">
-                <br>
+                    <!--  Last Name Field -->
+                    <div style="display: inline-block;">
+                        <label for="lastName">Last Name</label><br>
+                        <input class="checkout-Input" type="text" id="lastName" name="lastName" placeholder="e.g., Doe">
+                    </div><br><br>
 
-                <!--  Last Name Field -->
-                <label for="lastName"><i class="fa fa-envelope"></i>Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="e.g., Doe">
-                <br>
+                    <!--  Email Field -->
+                    <div style="display: inline-block;">
+                        <label for="email">Email:</label><br>
+                        <input class="checkout-Input" type="email" id="email" name="email" placeholder="e.g., john@email.com">
+                    </div>
 
-                <!-- Address Field -->
-                <label for="address"><i class="fa fa-envelope"></i>Address</label>
-                <input type="text" id="address" name="address" placeholder="e.g., 123 Street Dr">
-                <br>
+                    <!-- Phone Number Field -->
+                    <div style="display: inline-block;">
+                        <label for="phoneNumber">Phone Number (Only numbers)</label><br>
+                        <input class="checkout-Input" type="text" pattern="[0-9]{10}" id="phoneNumber" name="phoneNumber" placeholder="e.g., 4078485236">
+                    </div><br><br>
 
-                <!-- City Field -->
-                <label for="city"><i class="fa fa-envelope"></i>City</label>
-                <input type="text" id="city" name="city" placeholder="e.g., Orlando">
-                <br>
+                    <!-- Address Field -->
+                    <div style="display: inline-block;">
+                        <label for="address">Address</label><br>
+                        <input class="checkout-Input" style="width: 645px;" type="text" id="address" name="address" placeholder="e.g., 123 Street Dr">
+                    </div><br><br>
 
-                <!-- State Or Region Field -->
-                <label for="region"><i class="fa fa-envelope"></i>State Or Region</label>
-                <input id="region" name="region" placeholder="e.g., Florida">
-                <br>
+                    <!-- City Field -->
+                    <div style="display: inline-block;">
+                        <label for="city">City</label><br>
+                        <input class="checkout-Input" type="text" id="city" name="city" placeholder="e.g., Orlando">
+                    </div>
 
-                <!-- Country Field -->
-                <label for="region"><i class="fa fa-envelope"></i>Country</label>
-                <input id="country" name="country" placeholder="e.g., United States">
-                <br>
+                    <!-- State Or Region Field -->
+                    <div style="display: inline-block;">
+                        <label for="region">State Or Region</label><br>
+                        <input class="checkout-Input" id="region" name="region" placeholder="e.g., Florida">
+                    </div><br><br>
 
-                <!-- Postal Code Field -->
-                <label for="postalCode"><i class="fa fa-envelope"></i>Postal Code (Input U.S. postal code only)</label>
-                <input type="tel" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="e.g., 00000">
-                <br>
+                    <!-- Country Field -->
+                    <div style="display: inline-block;">
+                        <label for="region">Country</label><br>
+                        <input class="checkout-Input" id="country" name="country" placeholder="e.g., United States">
+                    </div>
 
-                <!-- Phone Number Field -->
-                <label for="phoneNumber"><i class="fa fa-envelope"></i>Phone Number (Only input numbers)</label>
-                <input type="text" pattern="[0-9]{10}" id="phoneNumber" name="phoneNumber" placeholder="e.g., 4078485236">
-                <br>
+                    <!-- Postal Code Field -->
+                    <div style="display: inline-block;">
+                        <label for="postalCode">Postal Code (U.S. postal code only)</label><br>
+                        <input class="checkout-Input" type="tel" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="e.g., 00000">
+                    </div><br><br>                
 
-                <!-- Date Picker Field -->
-                <label for="datepicker"><i class="fa fa-envelope"></i>Date of Pickup</label>
-                <input type="text" id="datepicker" name="date" readonly="readonly">
-                <br>
+                    <!-- Date Picker Field -->
+                    <div style="display: inline-block;">
+                        <label for="datepicker">Date of Pickup</label><br>
+                        <input class="checkout-Input" type="text" id="datepicker" name="date" readonly="readonly">
+                    </div>
 
-                <!-- Time Picker Field -->
-                <label for="timepicker"><i class="fa fa-envelope"></i>Time of Pickup</label>
-                <input type="text" id="timepicker" name="time" readonly="readonly">
-                <br>
+                    <!-- Time Picker Field -->
+                    <div style="display: inline-block;">
+                        <label for="timepicker">Time of Pickup</label><br>
+                        <input class="checkout-Input" type="text" id="timepicker" name="time" readonly="readonly">
+                    </div><br><br><br><br>
 
-
-                <!-- Input Button -->
-                <input name="place_order" type="submit" value="Place Order"/><br>
-                <br>&nbsp;
-            </div>
-        </form>
+                    <!-- Input Button -->
+                    <input class="submitButton" name="place_order" type="submit" value="Place Order">
+                </div>
+            </form>
+        </div>
     </div>
     
     <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>

@@ -5,7 +5,7 @@ require 'db.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Menu - Nonna's Table</title>
+    <title>Cart - Nonna's Table</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ require 'db.php';
         </div>
     </header>
 
-<div class="sec1-menu">
+<div class="sec-MCR">
         <span class="title2">Let's take a look!</span>
         <hr class="one">
         
@@ -54,7 +54,7 @@ require 'db.php';
             </div>
 
         <div id="cart" class="container-Products">
-            <div id="order_table">
+            <div id="order_table" class="pro-animate">
                 <table>
                     <tr>
                         <th width="40%">Product Name</th>
@@ -112,6 +112,11 @@ require 'db.php';
                                 </script>
                             </td>
                         </tr>
+                        <?php
+                    } else {
+                        echo ("<h2 class=\"cartEmpty\">Cart is empty</h2>");
+                        ?>
+                        <style type="text/css">table{display:none;}</style>
                         <?php
                     }
                     ?>
@@ -176,12 +181,12 @@ require 'db.php';
                     success: function (data) {
                         $('#order_table').html(data.order_table);
                         $('.badge').text(data.cart_item);
-                        alert("Product has been Added into Cart");
+                        alert("Product has been added into Cart");
                     }
                 });
             }
             else {
-                alert("Please Enter Number of Quantity")
+                alert("Please enter number of quantity")
             }
         });
         $(document).on('click', '.delete', function () {

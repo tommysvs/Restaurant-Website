@@ -221,7 +221,7 @@
 }
 
 /*** MENU ***/
-.sec1-menu {
+.sec-MCR {
     height: auto;    
     background-color: white;
     padding: 80px;
@@ -316,6 +316,10 @@ a.tabs:hover {
     transition: all 0.2s ease;
 }
 
+.imgRadius {
+    border-radius: 2px;
+}
+
 .buttonProduct {
     width: 100%;
     height: 45px;
@@ -353,15 +357,40 @@ a.tabs:hover {
     border-radius: 1px;
 }
 
-.viewDet {
-    font-size: 1em;
-    border-style: none;
-    background: none;
+/* VIEW DETAILS */
+.accordion {
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    background-color: white;
     color: black;
-    outline: none;
     cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.accordion:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.panel {
+    padding: 0 15px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
 }
 
 /*** CART ***/
@@ -423,8 +452,8 @@ th {
 }
 
 .submitButton:hover {
-    background-color: khaki;
-    color: black;
+    background-color: black;
+    color: white;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -478,7 +507,8 @@ input[type=text] {
     margin-right: 20px;
     margin-bottom: 20px;    
     border: 1px solid #ccc;
-    outline-color: #aaa;  
+    outline-color: #aaa;
+    border-radius: 3px;
 }
 
 .yemail {
@@ -486,7 +516,8 @@ input[type=text] {
     width: 49%;
     margin-bottom: 20px;    
     border: 1px solid #ccc;
-    outline-color: #aaa;  
+    outline-color: #aaa;
+    border-radius: 3px;
 }
 
 textarea {
@@ -499,15 +530,7 @@ textarea {
     margin: 0;
     float: left;
     font-family: 'Montserrat', sans-serif;
-}
-
-.yname:focus, .yemail:focus, textarea:focus, .textProduct:focus, .textQuantity:focus {
-    background-color: rgba(0, 0, 0, 0.01);
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    border-radius: 3px;
 }
 
 .buttonContact {
@@ -520,6 +543,7 @@ textarea {
     margin-top: 40px;
     text-decoration: none;
     text-align: center;
+    border-radius: 3px;
     font-family: 'Montserrat', sans-serif;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
@@ -530,8 +554,8 @@ textarea {
 }
 
 .buttonContact:hover {
-    background-color: khaki;
-    color: black;
+    background-color: black;
+    color: white;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -563,9 +587,28 @@ textarea {
 }
 
 /*** CHECKOUT ***/
-.sec1-checkout {
-    height: auto;
-    padding: 80px;
-    background-color: white;
+.container-Fields {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.checkout-Input {
+    width: 300px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    outline-color: #aaa;
+    margin-right: 40px;
+}
+
+.container-Receipt {
+    width: 100%;
+    margin: 0 auto;
+}
+
+table, td.receipt {
+    width: 700px;
     margin: 0 auto;
 }

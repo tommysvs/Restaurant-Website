@@ -171,22 +171,6 @@ nav.fixNav > span {
     }
 }
 
-.menu-animate {
-    position: relative;
-    animation: animateleft 0.8s
-}
-
-@keyframes animateleft {
-    from{
-        left: -500px;
-        opacity: 0;
-    }
-    to {
-        left: 0;
-        opacity: 1;
-    }
-}
-
 /*** FOOTER ***/
 footer {
     bottom: 0;
@@ -291,6 +275,16 @@ form.newsletter {
     width: 80%;
     text-align: center;
     margin-top: 15px;
+}
+
+/*** INPUT STYLE ***/
+.yname:focus, .yemail:focus, textarea:focus, .textProduct:focus, .textQuantity:focus, .checkout-Input:focus {
+    background-color: rgba(0, 0, 0, 0.01);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 /*** BUTTON-TO-TOP ***/
