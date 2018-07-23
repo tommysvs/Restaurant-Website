@@ -10,6 +10,6 @@ Map on how to get there - DONE<br/>
 Restaurant hours - DONE<br/>
 Contact information - DONE<br/>
 
-Arreglar diferente estilo en formularios del checkout.php
-Agregar slider a los reviews
-Ocultar tabla cuando diga 'Product removed'
+Arreglar diferente estilo en formularios del checkout.php<br>
+Agregar slider a los reviews<br>
+Ocultar tabla cuando diga 'Product removed'<br>
