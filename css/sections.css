@@ -43,7 +43,7 @@
 } 
 
 .sec2-home {
-    height: 810px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 80px;
@@ -73,7 +73,7 @@
 }
 
 .sec4-home {
-    height: 800px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 80px;
@@ -92,7 +92,7 @@
 }
 
 .sec2-about {
-    height: 1100px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 100px;
@@ -142,7 +142,7 @@
 }
 
 .sec4-about {
-    height: 1100px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 80px;
@@ -159,7 +159,7 @@
 }
 
 .sec6-about {
-    height: 800px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 80px;
@@ -176,7 +176,7 @@
 }
 
 .sec7-about { 
-    height: 720px;
+    height: auto;
     padding: 210px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../images/bg5.jpg);
     background-attachment: fixed;
@@ -225,8 +225,8 @@
     height: auto;    
     background-color: white;
     padding: 80px;
-    overflow: auto;
-    padding-top: 150px;
+    overflow: hidden;
+    padding-top: 130px;
 }
 
 .container-Menu {
@@ -236,12 +236,12 @@
 
 .container-Tabs {
     margin-bottom: 40px;
-    padding-top: 40px;
+    padding-top: 60px;
     text-align: center;
 }
 
 a.tabs {
-    font-size: 1.15em;
+    font-size: 1.05em;
     color: black;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.03);
@@ -372,7 +372,6 @@ table, th, td {
     color: black;
     padding: 12px;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 50px;
 }
 
 th {
@@ -445,7 +444,7 @@ th {
 }
 
 .sec2-contact {
-    height: 670px;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     padding: 80px;
@@ -550,7 +549,7 @@ textarea {
 }
 
 .sec4-contact {
-    height: 715px;
+    height: auto;
     padding: 80px;
     background-color: white;
     margin: 0 auto;
@@ -561,4 +560,12 @@ textarea {
     height: 400px;
     margin: 0 auto;
     margin-top: 50px;
+}
+
+/*** CHECKOUT ***/
+.sec1-checkout {
+    height: auto;
+    padding: 80px;
+    background-color: white;
+    margin: 0 auto;
 }

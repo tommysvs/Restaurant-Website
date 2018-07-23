@@ -50,7 +50,7 @@ if (isset($_POST["product_id"])) {
     }
     $order_table .= '  
            ' . $message . '  
-           <table class="table table-bordered">  
+           <table>  
                 <tr>  
                      <th width="40%">Product Name</th>  
                      <th width="10%">Quantity</th>  
@@ -67,10 +67,10 @@ if (isset($_POST["product_id"])) {
             $order_table .= '  
                      <tr>  
                           <td>' . $values["product_name"] . '</td>  
-                          <td><input type="text" name="quantity[]" id="quantity' . $values["product_id"] . '" value="' . $values["product_quantity"] . '" class="form-control quantity" data-product_id="' . $values["product_id"] . '" /></td>  
+                          <td><input type="text" name="quantity[]" id="quantity' . $values["product_id"] . '" value="' . $values["product_quantity"] . '" class="textQuantity quantity" data-product_id="' . $values["product_id"] . '" /></td>  
                           <td align="right">$ ' . $values["product_price"] . '</td>  
                           <td align="right">$ ' . number_format($values["product_quantity"] * $values["product_price"], 2) . '</td>  
-                          <td><button name="delete" class="btn btn-danger btn-xs delete" id="' . $values["product_id"] . '">Remove</button></td>  
+                          <td><button name="delete" class="deleteButton delete" id="' . $values["product_id"] . '">Remove</button></td>  
                      </tr>  
                 ';
             $subtotal = $subtotal + ($values['product_quantity'] * $values['product_price']);
@@ -80,13 +80,13 @@ if (isset($_POST["product_id"])) {
         }
         $order_table .= '  
                 <tr>  
-                            <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br></br>Total</td>
-                            <td align="right">$ ' . number_format($subtotal, 2) . '<br></br>$  ' . number_format($tax, 2) . '<br></br>$   ' . number_format($total, 2) . '</td>
+                            <td colspan="3" align="right">Subtotal<br></br>Tax (7.5%)<br><br>Total</td>
+                            <td align="right">$ ' . number_format($subtotal, 2) . '<br><br>$  ' . number_format($tax, 2) . '<br><br>$   ' . number_format($total, 2) . '</td>
                             <td></td>
                 </tr>  
                 <tr>  
                      <td colspan="5" align="center">  
-                                <button id="goToCheckout" class="submit-button">Checkout</button>
+                                <button id="goToCheckout" class="submitButton submit-button">Checkout</button>
                                 <script type="text/javascript">
                                     document.getElementById("goToCheckout").onclick = function () {
                                         location.href = "checkout.php";

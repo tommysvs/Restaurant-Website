@@ -152,7 +152,12 @@ nav.fixNav > span {
 /*** ANIMATIONS ***/
 .sec-animate {
     position: relative;
-    animation: animatebottom .8s
+    animation: animatebottom 0.8s
+}
+
+.pro-animate {
+    position: relative;
+    animation: animatebottom 0.4s
 }
 
 @keyframes animatebottom{
@@ -162,6 +167,22 @@ nav.fixNav > span {
     }
     to {
         bottom: 0;
+        opacity: 1;
+    }
+}
+
+.menu-animate {
+    position: relative;
+    animation: animateleft 0.8s
+}
+
+@keyframes animateleft {
+    from{
+        left: -500px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
         opacity: 1;
     }
 }
