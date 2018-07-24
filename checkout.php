@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <link rel="stylesheet" href="css/font_styles.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -63,7 +63,7 @@
         </div>
     </header>
     
-    <div class="sec-MCR">
+    <div class="sec1-checkout">
         <div class="sec-animate">
             <span class="title2">Checkout</span>
             <hr class="one">
@@ -171,6 +171,4 @@
 </body>
 </html>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>    
 <script src="js/functions.js"></script>
