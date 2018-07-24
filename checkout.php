@@ -13,10 +13,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="jquery.ui.timepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.ui.timepicker.css"/>
+    <!-- jQuery -->
     <script>
         $(function () {
-            $("#datepicker").datepicker({
-                dateFormat: 'dd/mm/yy',
+            $('#datepicker').datepicker({
+                dateFormat: 'mm/dd/yy',
                 minDate: 0,
                 maxDate: 2
             });
@@ -169,6 +170,10 @@
         </div>
     </footer>
 </body>
+<<<<<<< HEAD
 </html>
 
 <script src="js/functions.js"></script>
+=======
+</html>
+>>>>>>> a4c0e538b1128d4a44474a987cf4a1f1da6a424a
