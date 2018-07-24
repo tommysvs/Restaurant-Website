@@ -74,7 +74,7 @@ require 'db.php';
                                 <!-- Prints the Product Name -->
                                 <img class="imgRadius" src="food/<?php echo $row['Product_Image']; ?>" height="180" width="258"/><br/>
                                 <h3 class="food-title"><?php echo $row['Product_Name']; ?></h3>
-                                <button class="accordion">View details &raquo;</button>
+                                <button class="accordion">View details &darr;</button>
                                 <div class="panel">
                                     <p class="food-desc" id="viewdetails<?php echo $row['Product_Type'];
                                     echo $row['Product_ID']; ?>"><?php echo $row['Product_Description']; ?></p>
