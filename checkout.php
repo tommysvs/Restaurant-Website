@@ -138,7 +138,7 @@
                     </div><br><br><br><br>
 
                     <!-- Input Button -->
-                    <input class="submitButton" name="place_order" type="submit" value="Place Order">
+                    <input class="placeButton" name="place_order" type="submit" value="Place Order">
                 </div>
             </form>
         </div>
