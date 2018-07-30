@@ -13,13 +13,27 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="jquery.ui.timepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.ui.timepicker.css"/>
+    <style>
+        input[type=button], input[type=submit], input[type=reset] {
+            width: 120px;
+            height: 40px;
+            background-color: #161d27;
+            cursor: pointer;
+            border: none;
+            outline-color: #aaa;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            border-radius: 3px;
+        }
+    </style>
     <!-- jQuery -->
     <script>
         $(function () {
             $('#datepicker').datepicker({
                 dateFormat: 'mm/dd/yy',
-                minDate: 0,
-                maxDate: 2
+                minDate: 1,
+                maxDate: 3
             });
         });
 
@@ -63,7 +77,7 @@
             </nav>
         </div>
     </header>
-    
+
     <div class="sec1-checkout">
         <div class="sec-animate">
             <span class="title2">Checkout</span>
@@ -123,7 +137,7 @@
                     <div style="display: inline-block;">
                         <label for="postalCode">Postal Code (U.S. postal code only)</label><br>
                         <input class="checkout-Input" type="tel" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="e.g., 00000">
-                    </div><br><br>                
+                    </div><br><br>
 
                     <!-- Date Picker Field -->
                     <div style="display: inline-block;">
@@ -138,20 +152,20 @@
                     </div><br><br><br><br>
 
                     <!-- Input Button -->
-                    <input class="placeButton" name="place_order" type="submit" value="Place Order">
+                    <input class="submitButton" name="place_order" type="submit" value="Place Order">
                 </div>
             </form>
         </div>
     </div>
-    
+
     <a href="javascript:" id="return-to-top"><i class="fa fa-angle-double-up"></i></a>
-    
+
     <footer>
         <div class="line"></div>
         <div class="info-container">
             <span class="logo">Nonna's Table</span>
             <span class="info-footer">1800 Denn John Lane, Kissimmee, FL 34744</span>
-            
+
             <span class="title-footer">Email: <span style="color: rgba(255, 255, 255, 0.45); text-transform: lowercase;">nonnastable@gmail.com</span></span>
             <span class="title-footer" style="margin-top: 20px;">Working Hours:</span>
             <span class="info-footer">MON - FRI: 11:00 A.M. - 10:00 P.M.</span>
@@ -162,9 +176,9 @@
                 <input type="submit" value="SUBMIT" class="newsletter-button">
             </form>
         </div>
-        
+
         <div class="line" style="margin-top: 30px;"></div>
-        
+
         <div class="copy-container">
             <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
         </div>

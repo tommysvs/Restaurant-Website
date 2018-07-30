@@ -139,10 +139,11 @@ $date = date("Y-m-d H:i:s", strtotime($date));
                 $result = $mysqli->query($query);
                 while ($row = mysqli_fetch_array($result)) {
                     $customer_details = '  
-                                  <label>' . $row["Customer_Last_Name"] . ', ' . $row["Customer_First_Name"] . '</label>  
+                                  <label>' . $row["Customer_Last_Name"] . ', ' . $row["Customer_First_Name"] . '</label><br> 
                                   <p>' . $row["Customer_Address"] . '</p>  
                                   <p>' . $row["Customer_City"] . ', ' . $row["Customer_Postal_Code"] . '</p>  
-                                  <p>' . $row["Customer_Country"] . '</p>  
+                                  <p>' . $row["Customer_Country"] . '</p>
+                                  <p>Pickup Time: ' . date("m-d-Y h:i A", strtotime($row["Order_Pickup_Date"])) . '</p>   
                                   ';
                 }
                 $query = '  
