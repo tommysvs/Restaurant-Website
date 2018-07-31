@@ -147,6 +147,30 @@
     background-size: cover;
 }
 
+.mission-thumb {
+    margin: 0 auto;
+    height: 420px;
+    width: 550px;
+    object-fit: cover;
+    overflow: hidden;
+    background: url(../images/chef-preparing.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.atmos-thumb {
+    margin: 0 auto;
+    height: 400px;
+    width: 550px;
+    object-fit: cover;
+    overflow: hidden;
+    background: url(../images/open_business.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .sec3-about {
     height: 80%;
     padding-top: 12%;
@@ -184,10 +208,10 @@
 .grid-chefs {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 340px 340px 340px;
     grid-column-gap: 50px;
     grid-row-gap: 100px;
-    width: 1000px;
+    width: 1120px;
     text-align: center;
 }
 
@@ -200,6 +224,26 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+}
+
+.imgChef {
+    width: 340px;
+    height: 270px;
+    text-align: center;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr.three {
+    border-top: 1px solid khaki;
+    border-bottom: 0px;
+    width: 140px;
+    margin-top: -5px;
+    margin-bottom: 20px;
 }
 
 /*
@@ -241,6 +285,7 @@
 .slider {
     margin: 0 auto;
     max-width: 940px;
+    max-height: 340px;
 }
 
 .slide_viewer {

@@ -79,6 +79,12 @@
     font-size: 0.8em;
 }
 
+.project-warning {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5em;
+}
+
 /*** HOME ***/
 .oh {
     display: block;
@@ -130,19 +136,6 @@ p.box-desc {
     line-height: 25px;
 }
 
-.chef-title {
-    color: black;
-    font-size: 2em;
-    font-family: 'Suranna', sans-serif;
-    font-weight: lighter;
-    text-transform: uppercase;
-}
-
-p.chef-desc {
-    color: rgba(0, 0, 0, 0.8);
-    font-family: 'Montserrat', sans-serif;
-}
-
 /*** ABOUT ***/
 p.about-paragraphs {
     display: block;
@@ -154,6 +147,30 @@ p.about-paragraphs {
     margin-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
+}
+
+.chef-title {
+    color: black;
+    font-size: 2em;
+    font-family: 'Suranna', sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+p.chef-desc {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 25px;
+}
+
+p.chef-pos {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: -10px;
 }
 
 h8.reviews-title {
