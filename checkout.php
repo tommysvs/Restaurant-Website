@@ -182,12 +182,13 @@
         <div class="copy-container">
             <span class="copyright">&copy; Nonna's Table 2018. All rights reserved.</span>
         </div>
+        
+        <div class="warning-container">
+            <marquee behavior="scroll" direction="left" class="project-warning">This page is for a college project and is not a real website. We and Valencia College do not own or are making any money off from anything included in the website including images and backgrounds. This website has been made for educational purposes only. </marquee>
+        </div>
     </footer>
 </body>
-<<<<<<< HEAD
 </html>
 
+<!-- jQuery -->
 <script src="js/functions.js"></script>
-=======
-</html>
->>>>>>> a4c0e538b1128d4a44474a987cf4a1f1da6a424a
